@@ -6,7 +6,6 @@ PASSWORD="c4builder"
 
 # Cria o novo usuário e define a senha
 useradd -m $USERNAME
-echo -e "$PASSWORD\n$PASSWORD" | passwd $USERNAME
 
 # Define o caminho do diretório do projeto npm
 PROJECT_DIR="$PWD"
