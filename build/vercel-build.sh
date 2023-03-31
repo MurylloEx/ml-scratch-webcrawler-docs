@@ -4,10 +4,8 @@ whoami
 
 cd .cache
 ls -la
-cat puppeteer
-cd puppeteer/chrome
 
-ls -l
+tree puppeteer
 
 
 #npm run build
