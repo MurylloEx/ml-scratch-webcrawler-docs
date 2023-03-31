@@ -1,28 +1,36 @@
 {
-  "name": "ml-scratch-webscrap-docs",
+  "name": "scratch-projects-web-scraper-docs",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": "Muryllo, Kelvin & Edgleyson",
   "description": "Repositório para a documentação do projeto de machine learning que consiste em um Webscrap para projetos do Scratch.",
+  "homepage": "https://github.com/MurylloEx/scratch-projects-web-scraper-docs#readme",
+  "bugs": {
+    "url": "https://github.com/MurylloEx/scratch-projects-web-scraper-docs/issues"
+  },
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "start": "npx rimraf docs && c4builder && npx serve docs -p 80"
+    "build": "rimraf docs && c4builder",
+    "serve": "rimraf docs && c4builder site"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MurylloEx/ml-scratch-webscrap-docs.git"
+    "url": "git+https://github.com/MurylloEx/scratch-projects-web-scraper-docs.git"
   },
   "keywords": [
-    "webscrap",
+    "webscraper",
     "upe",
     "python",
     "c4-model",
-    "architecture"
+    "architecture",
+    "docs",
+    "c4builder",
+    "docsify"
   ],
-  "author": "Muryllo, Kelvin & Edgleyson",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/MurylloEx/ml-scratch-webscrap-docs/issues"
-  },
-  "homepage": "https://github.com/MurylloEx/ml-scratch-webscrap-docs#readme"
+  "dependencies": {
+    "c4builder": "^0.2.16",
+    "rimraf": "^4.4.1"
+  }
 }
