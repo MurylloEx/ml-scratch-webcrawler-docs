@@ -7,6 +7,8 @@ ls -la
 
 ls -R puppeteer
 
+cd ../
+
 #!/bin/bash
 mv ".cache/puppeteer/chrome/linux-1108766/chrome-linux/chrome" ".cache/puppeteer/chrome/linux-1108766/chrome-linux/chrome_original"
 echo "#!/bin/bash" > ".cache/puppeteer/chrome/linux-1108766/chrome-linux/chrome"
