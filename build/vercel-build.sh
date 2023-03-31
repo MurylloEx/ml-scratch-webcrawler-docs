@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Define o nome do usuário e a senha
 USERNAME="c4builder"
