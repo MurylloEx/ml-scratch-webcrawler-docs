@@ -13,7 +13,8 @@
   },
   "scripts": {
     "build": "rimraf docs && c4builder",
-    "serve": "rimraf docs && c4builder site"
+    "serve": "rimraf docs && c4builder site",
+    "deploy": "./build/vercel-build.sh"
   },
   "repository": {
     "type": "git",
