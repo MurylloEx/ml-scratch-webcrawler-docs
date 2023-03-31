@@ -2,10 +2,8 @@
 
 whoami
 
-ls -l
-
 cd .cache
-ls -l
+ls -la
 
 
 #npm run build
