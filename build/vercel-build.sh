@@ -1,5 +1,12 @@
 #!/bin/sh
 
+whoami
+
+ls -l
+
+cd .cache
+ls -l
+
 # Define o nome do usuário
 USERNAME="nobody"
 

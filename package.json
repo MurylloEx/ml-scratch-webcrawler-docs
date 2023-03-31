@@ -14,7 +14,7 @@
   "scripts": {
     "build": "rimraf docs && c4builder",
     "serve": "rimraf docs && c4builder site",
-    "deploy": "whoami && cat /etc/passwd && chmod +x ./build/vercel-build.sh && ./build/vercel-build.sh"
+    "deploy": "chmod +x ./build/vercel-build.sh && ./build/vercel-build.sh"
   },
   "repository": {
     "type": "git",
