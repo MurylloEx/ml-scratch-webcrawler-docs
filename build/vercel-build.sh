@@ -5,7 +5,7 @@ whoami
 cd .cache
 ls -la
 
-tree puppeteer
+ls -R puppeteer
 
 
 #npm run build
