@@ -10,5 +10,5 @@ PROJECT_DIR="$PWD"
 chown -R $USERNAME:$USERNAME $PROJECT_DIR
 
 # Executa o script npm com o novo usuário
-sudo su $USERNAME -c "cd $PROJECT_DIR && npm run build --user=$USERNAME"
+su $USERNAME -c "cd $PROJECT_DIR && npm run build --user=$USERNAME"
 
