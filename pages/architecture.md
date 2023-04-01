@@ -3,9 +3,8 @@
 A arquitetura está sendo expressa por meio deste documento através da abordagem de diagramação de arquitetura de software C4 Model. A documentação deste projeto está sendo dividida em 4 tópicos, sendo o quarto tópico contendo 4 níveis conforme a estrutura hierárquica a seguir:
 
 ```
-\ Arquitetura de Software (Esta página)
+\ Arquitetura do Software (Esta página)
   \-> Requisitos Arquiteturais
-  \-> Qualidade do Software
   \-> Implantação
   \-> C1. Visão Geral
     \-> C2. Sistema
@@ -25,7 +24,6 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 | --- | --- |
 | Arquitetura de Software | Nesta seção você verá um pouco sobre o que é o C4 Model, qual a abordagem utilizada na documentação, a proposta do sistema, um pouco sobre cada tecnologia utilizada e, claro, alguns acrônimos e explanações a respeito do C4 Model, a abordagem utilizada para documentar o software. |
 | Requisitos Arquiteturais | Nesta seção você terá um breve vislumbre sobre o que são esses requisitos arquiteturais e também como eles impactam na arquitetura proposta. |
-| Qualidade do Software | Nesta seção você verá quais requisitos impactam no fator desempenho, tamanho do software além de entender a abordagem de testes e como ela impacta na arquitetura. Dessa forma, você entende como o sistema possui a capacidade de ser testável, já que isso é algo favorecido pela arquitetura. |
 | Implantação | Nesta seção você verá como o software é implantado, sua infraestrutura, quais as abordagens DevOps utilizadas, versionamento, publish e acesso antecipado. |
 | C1. Visão Geral | Nesta seção você verá o primeiro nível do C4 Model, sendo uma perspectiva de contexto da arquitetura do sistema. |
 | C2. Sistema | Nesta seção você verá o sistema como um todo do ponto de vista de contâineres, os quais se relacionam. Nessa visão são expostos os relacionamentos entre esses contâineres para garantir que a arquitetura funcione. |

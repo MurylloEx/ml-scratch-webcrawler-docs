@@ -1,7 +1,7 @@
 
 No **XXXXX** há dois tipos de publicação, a de produção e desenvolvimento. Na de desenvolvimento, fazemos a implantação da aplicação no Expo GO, enquanto a de produção fazemos a implantação na PlayStore. A seguir você verá como cada uma delas funciona.
 
-#### 3.3.1 PlayStore
+#### 2.3.1 PlayStore
 
 Um ponto importante para o sucesso do aplicativo e para que ele seja distribuido para o seu devido público é a publicação na PlayStore. O processo é puramente manual e envolve ter uma conta de desenvolvedor Google que custa U$ 25,00 dólares. Para que o aplicativo seja disponibilizado é necessário reservar um namespace único, que nesse caso é ``com.sejaupe.app`` e após reservá-lo, configurar a loja e responder a várias perguntas de segurança. 
 
@@ -21,7 +21,7 @@ A aplicação se encontra disponível na PlayStore publicamente e o padrão de v
 >Para se manter a consistência da versão exibida na PlayStore a relação entre ``Conventional Commits`` e a versão da aplicação na PlayStore deve ser respeitada.<br>
 >*"Commits do tipo fix devem ser enviados para releases PATCH. Commits do tipo feat devem ser enviados para releases MINOR. Commits com BREAKING CHANGE nas mensagens, independentemente do tipo, devem ser enviados para releases MAJOR." - Conventional Commits*
 
-#### 3.3.2 Expo Go
+#### 2.3.2 Expo Go
 
 Um dos pontos fortes do ``Expo SDK`` é a possibilidade de a aplicação ser testada no Expo GO, um aplicativo para Android e iOS que permite que o desenvolvedor tenha uma visão de Hot Reload enquanto desenvolve o aplicativo sem a necessidade de recompilar o projeto quando alterações são feitas no código-fonte. Para que isso seja possível o desenvolvedor deverá executar o comando ``npm start`` no terminal, dentro do workspace do projeto e então através do Expo GO escanear o QR Code que aparece no próprio terminal ou na aba do navegador que se abrirá em instantes.
 

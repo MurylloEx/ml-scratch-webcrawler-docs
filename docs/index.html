@@ -13,6 +13,9 @@
         p:not([align]), td, th {
           text-align: justify!important;
         }
+        .cover p:not([align]), td, th {
+          text-align: center!important;
+        }
         table {
           width: 100%!important;
           display: table!important;
@@ -24,6 +27,7 @@
       <div id="app"></div>
       <script>
         window.$docsify = {
+  "coverpage": true,
   "flexible-alerts": {
     "note": {
       "label": "Nota"

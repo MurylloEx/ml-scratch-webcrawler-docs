@@ -1,4 +1,5 @@
 const settings = {
+  coverpage: true,
   "flexible-alerts": {
     note: {
       label: "Nota"
@@ -30,6 +31,9 @@ module.exports = (options) => {
       <style>
         p:not([align]), td, th {
           text-align: justify!important;
+        }
+        .cover p:not([align]), td, th {
+          text-align: center!important;
         }
         table {
           width: 100%!important;

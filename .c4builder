@@ -1,7 +1,7 @@
 {
 	"projectName": "SPWS Official Docs",
 	"homepageName": "Arquitetura do Software",
-	"rootFolder": "src",
+	"rootFolder": "pages",
 	"distFolder": "docs",
 	"generateMD": false,
 	"generatePDF": false,

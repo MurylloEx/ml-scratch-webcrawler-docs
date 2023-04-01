@@ -30,7 +30,7 @@ O DevOps é a combinação de filosofias culturais, práticas e ferramentas que 
 
   Opere rapidamente enquanto mantém o controle e preserva a conformidade. Você pode adotar o modelo de DevOps sem sacrificar a segurança usando políticas de conformidade automáticas, controles minuciosos e técnicas de gerenciamento de configuração. Por exemplo, usando a infraestrutura e a política como código, você pode definir e acompanhar a conformidade em escala.
 
-#### 3.2.1 GitHub Actions Pipelines
+#### 2.2.1 GitHub Actions Pipelines
 
 Quando um Pull Request é aceito para branch ``main``, as GitHub actions são acionadas no projeto. Para se configurar uma pipeline, ou seja, uma GitHub Action é necessário especificar a branch alvo, a ação que desencadeia a execução da pipeline e os jobs que devem ser realizados. 
 
@@ -68,7 +68,7 @@ jobs:
 >[!NOTE]
 >É importante notar que o processo de compilação do projeto é feito pelo Expo, pois o projeto utiliza o Workflow Managed onde as dependências nativas são geridas pelo Expo. Do ponto de vista arquitetural, isso tira a responsabilidade do programador ter instalado em sua máquina o Android Studio e outras ferramentas de compilação, pois o Expo já realiza esse procedimento.
 
-#### 3.2.3 Build automático
+#### 2.2.3 Build automático
 
 O processo de build dos assets gerenciados, imagens e execução de scripts do lado do TypeScript/JavaScript são realizados na execução do comando ``npm install``. Já a construção do binário APK/AAB utilizado para instalação no aparelho são gerados inteiramente pelo Expo pois as dependências do Android e arquivos Java, Kotlin, Swift, Objective-C são todos retidos pelo Expo. Essa é uma de suas maiores vantagens, por isso parte do processo de build ocorre durante a fase de implantação no Expo. 
 
@@ -76,7 +76,7 @@ O processo de build dos assets gerenciados, imagens e execução de scripts do l
   <img src="asset_github_build_image.png" alt="GitHub Action Pipeline" />
 </p>
 
-#### 3.2.4 Deployment automático
+#### 2.2.4 Deployment automático
 
 Essa é a fase onde ocorre de fato a construção do APK/AAB da aplicação. O que ocorre é que, logo após ter sido executado o ``npm install`` do projeto, as dependências Node.js são enviadas para o Expo através de um processo de upload de arquivos automático pela pipeline, onde o Expo constrói os binários multiplataforma, empacota e disponibiliza o acesso tanto na esteira como em seu painel de build. É possível extrair o AAB da build e realizar seu upload na PlayStore sem a necessidade do Android Studio. O equivalente também é possível utilizando o comando ``npm run build``, mas é necessário ter executado o ``npm install`` previamente na máquina de desenvolvimento.
 
@@ -84,7 +84,7 @@ Essa é a fase onde ocorre de fato a construção do APK/AAB da aplicação. O q
   <img src="asset_github_deployment_image.png" alt="GitHub Action Pipeline" />
 </p>
 
-#### 3.2.5 GitHub Webhooks Notifications no Discord
+#### 2.2.5 GitHub Webhooks Notifications no Discord
 
 Como parte do processo de DevOps, há a coleta de informações após o software estar em execução e no momento do desenvolvimento, para identificar etapas bem-sucedidas e principalmente mal-sucedidas. O Discord atua como um importante aliado nesse aspecto pois permite que seja registrado um Webhook do Discord no GitHub e a cada ação realizada, não apenas em um repositório, mas em toda a organização do GitHub (React Native Group), o Discord é notificado e exibe através do Bot do GitHub informações referentes aquele ocorrido. As mensagens seguem o formato ilustrado na imagem a seguir.
 
