@@ -1,5 +1,4 @@
 #!/bin/sh
-
 cd .cache/puppeteer/chrome/linux-*/chrome-linux
 
 mv "chrome" "chrome_original"

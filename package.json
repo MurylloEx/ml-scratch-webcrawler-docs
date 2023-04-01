@@ -14,7 +14,7 @@
   "scripts": {
     "build": "rimraf docs && c4builder",
     "serve": "rimraf docs && c4builder site",
-    "deploy": "chmod +x ./build/vercel-build.sh && ./build/vercel-build.sh"
+    "deploy": "chmod +x ./build/vercel.sh && ./build/vercel.sh"
   },
   "repository": {
     "type": "git",
@@ -30,8 +30,17 @@
     "c4builder",
     "docsify"
   ],
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "c4builder": "^0.2.16",
-    "rimraf": "^4.4.1"
+    "rimraf": "^4.4.1",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "3.3.0",
+    "husky": "^8.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
