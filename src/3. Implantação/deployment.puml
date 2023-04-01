@@ -1,0 +1,31 @@
+@startuml "Deployment Diagram"
+
+!theme plain
+
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Deployment.puml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+skinparam backgroundcolor transparent
+
+Deployment_Node(NODE_SMARTPHONE, "Smartphone do Usuário", "device") {
+  Container(NODE_ANDROID, "Android", "Operating System", "Sistema Operacional do Smartphone")
+}
+Deployment_Node(NODE_CLOUDFLARE, "Servidor de Firewall (CloudFlare)", "device")
+Deployment_Node(NODE_PROXY, "Proxy Reverso e Load Balancer", "device") {
+  Container(NODE_PROXY_RUNTIME, "Magic Proxy 1.1.21", "Proxy", "Proxy reverso utilizado para balanceamento de carga e prover o HTTPS")
+}
+Deployment_Node(NODE_WEBSERVER, "Servidor Web XXXXX", "device") {
+  Container(NODE_WEBSERVER_API, "XXXXX API", "software", "Webservice em NestJS que provê as funcionionalidades de que o aplicativo precisa utilizando o padrão REST")
+}
+Deployment_Node(NODE_DATABASE, "Servidor de Banco de Dados", "device") {
+  Container(NODE_SQLITE3_DRIVER, "SQLite3 Database Driver", "Permite a interação com o banco de dados e o Node.JS sobre o pacote node-sqlite3")
+}
+
+Rel(NODE_SMARTPHONE, NODE_CLOUDFLARE, "Connects to", "WS/HTTPS")
+Rel(NODE_CLOUDFLARE, NODE_PROXY, "Connects to", "WS/HTTPS")
+Rel(NODE_PROXY, NODE_WEBSERVER, "Connects to", "WS/HTTP")
+Rel(NODE_WEBSERVER, NODE_DATABASE, "Read/Writes from", "TCP/IP")
+
+@enduml
