@@ -8,12 +8,7 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
   \-> Implantação
   \-> C1. Visão Geral
     \-> C2. Sistema
-      \-> C3. Aplicação Mobile (Client)
-        \-> C4. Visão de Caso de Uso
-        \-> C4. Visão de Implementação
-        \-> C4. Visão de Processo
-        \-> C4. Visão Lógica
-      \-> C3. Endpoints RESTful (Server)
+      \-> C3. Algoritmo e Solução
         \-> C4. Visão de Caso de Uso
         \-> C4. Visão de Implementação
         \-> C4. Visão de Processo
