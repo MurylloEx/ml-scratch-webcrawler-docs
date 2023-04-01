@@ -17,23 +17,7 @@ Requisitos são, além de funções, objetivos, propriedades, restrições que o
 | RF008. Informar corpo docente | O usuário deverá ser capaz de visualizar o corpo docente de cada um dos cursos ofertados pela UPE. | Desejável |
 | RF009. Detalhar docentes | O usuário deverá ser capaz de visualizar detalhes sobre cada um dos docentes dos cursos ofertados pela UPE. | Desejável |
 | RF010. Apresentar áreas de atuação | O usuário deverá ser capaz de visualizar as possíveis áreas de atuação de cada um dos cursos ofertados pela UPE. | Desejável |
-| RF011. Mostrar visão do mercado de trabalho | O usuário deverá ser capaz de visualizar as perspectivas de mercado de trabalho para cada um dos cursos ofertados pela UPE. | Desejável |
-| RF012. Disponibilizar Programa Pedagógico do Curso | O usuário deverá ser capaz de visualizar o PPC (Plano Pedagógico de Curso) de cada um dos cursos ofertados pela UPE. | Desejável |
-| RF013. Retratar contexto histórico do Curso | O usuário deverá ser capaz de visualizar o contexto histórico de cada um dos cursos ofertados pela UPE. | Desejável |
-| RF014. Realizar Teste Vocacional | O usuário deverá ser capaz de responder um tipo de teste vocacional lúdico para identificar quais cursos se encaixam melhor no meu perfil. | Essencial |
-| RF015. Ilustrar potencial de vocação para o curso | O usuário deverá ser capaz de visualizar através de porcentagens quais cursos me identifico mais dentro das opções ofertadas pela UPE em todo o estado. | Essencial |
-| RF016. Ofertar possibilidade de refazer teste | O usuário deverá ser capaz de poder refazer o teste visando aprimorar preferências do curso. | Essencial |
-| RF017. Exibir descrição do Campus | O usuário deverá ser capaz de visualizar a descrição dos Campus da UPE. | Importante |
-| RF018. Informar redes sociais | O usuário deverá ser capaz de visualizar a informação das principais redes sociais pertencentes aos Campus da UPE. | Desejável |
-| RF019. Apresentar localização do Campus | O usuário deverá ser capaz de visualizar com exatidão a localização dos Campus da UPE. | Importante |
-| RF020. Exibir principais eventos | O usuário deverá ser capaz de visualizar os principais eventos dos Campus da UPE. | Desejável |
-| RF021. Informar meios de contato | O usuário deverá ser capaz de visualizar todos os meios de contatos importantes. | Desejável |
-| RF022. Interagir pelo bate-papo | O usuário deverá ser capaz de se comunicar com outros usuários através de um chat online em tempo real. | Desejável |
-| RF023. Avaliar a sugestão de cursos | O usuário deverá ser capaz de avaliar a sugestão de curso exposta pelo aplicativo. | Importante |
-| RF024. Avaliar determinado curso | O usuário deverá ser capaz de “curtiu” ou não “curtiu” o curso em que ele entrou. | Importante |
-| RF025. Realizar login | O usuário deverá ser capaz de realizar login via SSO com sua conta do Google. | Essencial |
-| RF026. Pesquisar cursos | O usuário deverá ser capaz de filtrar informações para encontrar determinado curso. | Essencial |
-| RF027. Lembrete de Teste Vocacional | O usuário deverá ser capaz de ser alertado sobre o status do preenchimento do seu teste vocacional, com o objetivo de melhorar sua experiência no aplicativo. | Importante |
+
 
 > [!TIP]
 > Você pode visualizar todos os requisitos funcionais na **seção 1.1** com maior nível de detalhes.
