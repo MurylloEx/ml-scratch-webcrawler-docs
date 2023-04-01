@@ -28,12 +28,16 @@ module.exports = (options) => {
       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
       <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css">
       <link rel="stylesheet" href="${options.stylesheet}">
+      <link rel="icon" href="favicon.ico">
       <style>
         p:not([align]), td, th {
           text-align: justify!important;
         }
         .cover p:not([align]), td, th {
           text-align: center!important;
+        }
+        .cover .cover-main {
+          z-index: 0!important;
         }
         table {
           width: 100%!important;
