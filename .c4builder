@@ -1,6 +1,6 @@
 {
 	"projectName": "SPWS Official Docs",
-	"homepageName": "Documentação",
+	"homepageName": "Teste",
 	"rootFolder": "src",
 	"distFolder": "docs",
 	"generateMD": false,
