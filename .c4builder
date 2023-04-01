@@ -1,6 +1,6 @@
 {
 	"projectName": "SPWS Official Docs",
-	"homepageName": "Teste",
+	"homepageName": "Arquitetura do Software",
 	"rootFolder": "src",
 	"distFolder": "docs",
 	"generateMD": false,
