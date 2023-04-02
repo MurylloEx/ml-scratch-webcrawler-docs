@@ -6,8 +6,8 @@ rootDir=$(pwd)
 if [ -d ".cache/puppeteer/chrome" ]; then
 
   echo "[🐞] Found Puppeteer chromium folder..."
-  echo "[🐞] Applying patch to disable sandbox of chromium..."
   echo "[🐞] Current working directory: $rootDir"
+  echo "[🐞] Applying patch to disable chromium sandbox..."
 
   # Change current directory to Chromium binary folder
   cd .cache/puppeteer/chrome/linux-*/chrome-linux
