@@ -15,7 +15,7 @@
     "copy": "shx mkdir -p docs && shx cp \"assets/**/*.*\" docs",
     "build": "shx rm -rf docs && c4builder && npm run copy",
     "serve": "npm run build && serve docs -p 80",
-    "deploy": "shx chmod +x ./build/vercel.sh && ./build/vercel.sh"
+    "deploy": "shx chmod +x ./build/vercel.sh && ./build/vercel.sh && npm run build"
   },
   "repository": {
     "type": "git",

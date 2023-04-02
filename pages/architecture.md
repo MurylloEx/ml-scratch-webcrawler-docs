@@ -6,7 +6,6 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 \ Arquitetura do Software (Esta página)
   \-> Requisitos do sistema
   \-> Implantação
-  \-> Limitações
   \-> C1. Visão Geral
     \-> C2. Sistema
       \-> C3. Algoritmo e Solução
@@ -21,7 +20,6 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 | Arquitetura de Software | Nesta seção você verá um pouco sobre o que é o C4 Model, qual a abordagem utilizada na documentação, a proposta do sistema e um pouco sobre cada tecnologia utilizada no software. |
 | Requisitos do sistema | Nesta seção você terá um breve vislumbre sobre o que são esses requisitos e também como eles impactam na arquitetura proposta, sendo divididos em funcionais e não funcionais. |
 | Implantação | Nesta seção você verá como o software é implantado, sua infraestrutura. |
-| Limitações | Nesta seção você verá quais limitações impactaram no desenvolvimento e quais foram superadas. |
 | C1. Visão Geral | Nesta seção você verá o primeiro nível do C4 Model, sendo uma perspectiva de contexto da arquitetura do sistema. |
 | C2. Sistema | Nesta seção você verá o sistema como um todo do ponto de vista de contâineres, os quais se relacionam. Nessa visão são expostos os relacionamentos entre esses contâineres para garantir que a arquitetura funcione. |
 | C3. Algoritmo e Solução | Nesta seção estão expressos os detalhes de como o algoritmo funciona e como ele pode ser usado para resolver problemas semelhantes. |
@@ -52,7 +50,7 @@ Se concentra na funcionalidade que o sistema disponibiliza para o usuároi final
 1. [Python](https://www.python.org/)<br>
 Python é uma linguagem de programação interpretada, de alto nível e de propósito geral, que foi criada por Guido van Rossum em 1991. É conhecida por sua simplicidade e facilidade de uso, tornando-a uma das linguagens de programação mais populares em uso hoje em dia. É utilizado em muitas áreas, incluindo desenvolvimento web, análise de dados, inteligência artificial, aprendizado de máquina, automação de tarefas, jogos e muito mais. É também uma das linguagens de programação mais utilizadas em ensino e pesquisa, pois é fácil de aprender e tem muitas bibliotecas de código aberto disponíveis.
 
-2. [Jupyther](https://jupyter.org/)<br>
+2. [Jupyter](https://jupyter.org/)<br>
 Jupyter é uma plataforma de código aberto para computação interativa em diversas linguagens de programação, incluindo Python, R, Julia e outras. A palavra "Jupyter" é uma combinação dos nomes das três linguagens de programação que inicialmente suportavam a plataforma: Julia, Python e R. Ele é uma plataforma poderosa e versátil para computação interativa em diversas linguagens de programação. É amplamente utilizado para análise de dados, prototipação de aplicativos, educação e colaboração em tempo real. A plataforma é apoiada por uma comunidade de desenvolvedores ativos que continuam a melhorá-la e expandi-la.
 
 3. [Selenium](https://selenium-python.readthedocs.io/)<br>
