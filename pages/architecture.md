@@ -4,8 +4,9 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 
 ```
 \ Arquitetura do Software (Esta página)
-  \-> Requisitos Arquiteturais
+  \-> Requisitos do sistema
   \-> Implantação
+  \-> Limitações
   \-> C1. Visão Geral
     \-> C2. Sistema
       \-> C3. Algoritmo e Solução
@@ -17,17 +18,16 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 
 | Nome da seção | Propósito e breve descrição |
 | --- | --- |
-| Arquitetura de Software | Nesta seção você verá um pouco sobre o que é o C4 Model, qual a abordagem utilizada na documentação, a proposta do sistema, um pouco sobre cada tecnologia utilizada e, claro, alguns acrônimos e explanações a respeito do C4 Model, a abordagem utilizada para documentar o software. |
-| Requisitos Arquiteturais | Nesta seção você terá um breve vislumbre sobre o que são esses requisitos arquiteturais e também como eles impactam na arquitetura proposta. |
-| Implantação | Nesta seção você verá como o software é implantado, sua infraestrutura, quais as abordagens DevOps utilizadas, versionamento, publish e acesso antecipado. |
+| Arquitetura de Software | Nesta seção você verá um pouco sobre o que é o C4 Model, qual a abordagem utilizada na documentação, a proposta do sistema e um pouco sobre cada tecnologia utilizada no software. |
+| Requisitos do sistema | Nesta seção você terá um breve vislumbre sobre o que são esses requisitos e também como eles impactam na arquitetura proposta, sendo divididos em funcionais e não funcionais. |
+| Implantação | Nesta seção você verá como o software é implantado, sua infraestrutura. |
+| Limitações | Nesta seção você verá quais limitações impactaram no desenvolvimento e quais foram superadas. |
 | C1. Visão Geral | Nesta seção você verá o primeiro nível do C4 Model, sendo uma perspectiva de contexto da arquitetura do sistema. |
 | C2. Sistema | Nesta seção você verá o sistema como um todo do ponto de vista de contâineres, os quais se relacionam. Nessa visão são expostos os relacionamentos entre esses contâineres para garantir que a arquitetura funcione. |
-| C3. Aplicação Mobile (Client) e C3. Endpoints RESTful (Server) | Nestas seções são expressos os detalhes da arquitetura do front-end móvel, como por exemplo as camadas do sofware, como novas funcionalidades devem ser implementadas respeitando a arquitetura, os padrões e convenções de nomenclatura, etc. |
+| C3. Algoritmo e Solução | Nesta seção estão expressos os detalhes de como o algoritmo funciona e como ele pode ser usado para resolver problemas semelhantes. |
 | Níveis C4 | Por fim, mas não menos importante, as seções C4 abordam, cada uma, visões arquiteturais seguindo a ideia de Philippe Kruchten. Neste nível, é exigido conhecimento técnico em programação para entender as ilustrações e diagramas UML que mostram os casos de uso que realizam a arquitetura vigente. |
 
-Ao longo de toda esta documentação, você verá em detalhes como a arquitetura é dividida, suas tecnologias e, claro, como elas se relacionam. A imagem a seguir ilustra de forma superficial como o projeto está dividido em back-end e front-end e seus principais componentes internos, explanados ao longo das seções.<br>
-
-![Diagrama de Definição de Arquitetura](asset_architecture_definition_diagram.png "Diagrama de Definição de Arquitetura")
+Ao longo de toda esta documentação, você verá em detalhes como a arquitetura é dividida, suas tecnologias e, claro, como elas se relacionam. A documentação detalhada da arquitetura de um sistema ou software é fundamental para garantir o sucesso do projeto, a qualidade do código, a validação das funcionalidades, a manutenção e suporte contínuos. É, portanto, uma parte crucial do processo de desenvolvimento de qualquer sistema ou software.
 
 ### • O que é o C4 Model?
 
@@ -46,8 +46,6 @@ Ilustra o sistema do ponto de vista do programador e se preocupa com o gerenciam
 Permite visualizar as partes dinâmicas do sistema, explicar os processos e como eles se comunicam, focando no comportamento do sistema. A visão de processo se encarrega da concorrência, distribuição, integração, performance e escalabilidade. O Diagrama de atividades é usado nesta visão.
 4. **Visão Lógica**<br>
 Se concentra na funcionalidade que o sistema disponibiliza para o usuároi final. Os diagramas UML usados para representar a visão lógica incluem: Diagrama de classes, Diagrama de comunicação e Diagrama de sequencia. 
-
-Há outra visão arquitetural que se encontra fora do nível C4 pois diz respeito tanto ao front-end como ao back-end, sendo ela a **visão de implantação**. Esta visão, mostra o sistema do ponto de vista do engenheiro. Se preocupa com a topologia dos componentes de software (no contexto físico) assim como a comunicação entre esses componentes. Esta visão também é conhecida como visão de implantação. Os diagramas UML usados para descrever esta visão incluem o Diagrama de implantação.
 
 ### • Principais tecnologias envolvidas
 
@@ -98,17 +96,3 @@ Numa tentativa de propor sugestões para auxiliar os vestibulandos e os futuros 
 
 Diante disso o “XXXXX” apresenta-se como um aplicativo mobile que visa disponibilizar informações detalhadas sobre o Campus Garanhuns da UPE e seus cursos, aproximando a Universidade da sociedade. Além disso, através de meios lúdicos, pretende apoiar a tomada de decisão dos alunos que anseiam ingressar em algum dos cursos ofertados.
 
-### • Acrônimos
-
-| Acrônimo/Abreviação | Significado e descrição |
-| --- | --- |
-| API | Interface de programação de aplicativos |
-| UML | Unified Modeling Language |
-| DDoS | Ataques cibernéticos com a finalidade de tornar o sistema indisponível |
-| Framework | Uma estrutura de código genérica e padrão para se desenvolver um determinado software com maior ênfase na reutilização de código |
-| RNF | Identificador de um requisito não funcional |
-| MVC | Padrão de projeto Model-View-Controller para estruturamento de webservices |
-| NestJS | Framework de desenvolvimento de aplicações webservice e serviços de back-end |
-| Back-end | É um termo que representa a aplicação residente no lado do servidor |
-| MSC | Model-Service-Controller para estruturamento do projeto |
-| JSVM | JavaScript Virtual Machine |
