@@ -14,7 +14,7 @@ if [ -d ".cache/puppeteer/chrome" ]; then
 
   # Creating a script proxy that transfer the received args to original chrome executable
   mv "chrome" "chrome_original"
-  mv "$rootDir/build/patch.sh" "./chrome.sh"
+  mv "$rootDir/build/patch.sh" "./chrome"
 
   # Adding execute permission to script proxy
   chmod +x "chrome"
