@@ -6,8 +6,9 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 
 ```
 \ Arquitetura do Software (Esta página)
-  \-> Requisitos Arquiteturais
+  \-> Requisitos do sistema
   \-> Implantação
+  \-> Limitações
   \-> C1. Visão Geral
     \-> C2. Sistema
       \-> C3. Algoritmo e Solução
@@ -19,17 +20,16 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 
 | Nome da seção | Propósito e breve descrição |
 | --- | --- |
-| Arquitetura de Software | Nesta seção você verá um pouco sobre o que é o C4 Model, qual a abordagem utilizada na documentação, a proposta do sistema, um pouco sobre cada tecnologia utilizada e, claro, alguns acrônimos e explanações a respeito do C4 Model, a abordagem utilizada para documentar o software. |
-| Requisitos Arquiteturais | Nesta seção você terá um breve vislumbre sobre o que são esses requisitos arquiteturais e também como eles impactam na arquitetura proposta. |
-| Implantação | Nesta seção você verá como o software é implantado, sua infraestrutura, quais as abordagens DevOps utilizadas, versionamento, publish e acesso antecipado. |
+| Arquitetura de Software | Nesta seção você verá um pouco sobre o que é o C4 Model, qual a abordagem utilizada na documentação, a proposta do sistema e um pouco sobre cada tecnologia utilizada no software. |
+| Requisitos do sistema | Nesta seção você terá um breve vislumbre sobre o que são esses requisitos e também como eles impactam na arquitetura proposta, sendo divididos em funcionais e não funcionais. |
+| Implantação | Nesta seção você verá como o software é implantado, sua infraestrutura. |
+| Limitações | Nesta seção você verá quais limitações impactaram no desenvolvimento e quais foram superadas. |
 | C1. Visão Geral | Nesta seção você verá o primeiro nível do C4 Model, sendo uma perspectiva de contexto da arquitetura do sistema. |
 | C2. Sistema | Nesta seção você verá o sistema como um todo do ponto de vista de contâineres, os quais se relacionam. Nessa visão são expostos os relacionamentos entre esses contâineres para garantir que a arquitetura funcione. |
-| C3. Aplicação Mobile (Client) e C3. Endpoints RESTful (Server) | Nestas seções são expressos os detalhes da arquitetura do front-end móvel, como por exemplo as camadas do sofware, como novas funcionalidades devem ser implementadas respeitando a arquitetura, os padrões e convenções de nomenclatura, etc. |
+| C3. Algoritmo e Solução | Nesta seção estão expressos os detalhes de como o algoritmo funciona e como ele pode ser usado para resolver problemas semelhantes. |
 | Níveis C4 | Por fim, mas não menos importante, as seções C4 abordam, cada uma, visões arquiteturais seguindo a ideia de Philippe Kruchten. Neste nível, é exigido conhecimento técnico em programação para entender as ilustrações e diagramas UML que mostram os casos de uso que realizam a arquitetura vigente. |
 
-Ao longo de toda esta documentação, você verá em detalhes como a arquitetura é dividida, suas tecnologias e, claro, como elas se relacionam. A imagem a seguir ilustra de forma superficial como o projeto está dividido em back-end e front-end e seus principais componentes internos, explanados ao longo das seções.<br>
-
-![Diagrama de Definição de Arquitetura](asset_architecture_definition_diagram.png "Diagrama de Definição de Arquitetura")
+Ao longo de toda esta documentação, você verá em detalhes como a arquitetura é dividida, suas tecnologias e, claro, como elas se relacionam. A documentação detalhada da arquitetura de um sistema ou software é fundamental para garantir o sucesso do projeto, a qualidade do código, a validação das funcionalidades, a manutenção e suporte contínuos. É, portanto, uma parte crucial do processo de desenvolvimento de qualquer sistema ou software.
 
 ### • O que é o C4 Model?
 
@@ -49,68 +49,27 @@ Permite visualizar as partes dinâmicas do sistema, explicar os processos e como
 4. **Visão Lógica**<br>
 Se concentra na funcionalidade que o sistema disponibiliza para o usuároi final. Os diagramas UML usados para representar a visão lógica incluem: Diagrama de classes, Diagrama de comunicação e Diagrama de sequencia. 
 
-Há outra visão arquitetural que se encontra fora do nível C4 pois diz respeito tanto ao front-end como ao back-end, sendo ela a **visão de implantação**. Esta visão, mostra o sistema do ponto de vista do engenheiro. Se preocupa com a topologia dos componentes de software (no contexto físico) assim como a comunicação entre esses componentes. Esta visão também é conhecida como visão de implantação. Os diagramas UML usados para descrever esta visão incluem o Diagrama de implantação.
-
 ### • Principais tecnologias envolvidas
 
-1. [JavaScript](https://www.javascript.com/)<br>
-JavaScript é uma linguagem de programação baseada em texto usada tanto no lado do cliente quanto no lado do servidor que permite que você torne as páginas da web interativas. Enquanto HTML e CSS são linguagens que dão estrutura e estilo às páginas da web, o JavaScript fornece às páginas da web elementos interativos que envolvem o usuário. Exemplos comuns de JavaScript que você pode usar todos os dias incluem a caixa de pesquisa na Amazon, um vídeo de recapitulação de notícias incorporado no The New York Times ou atualizar seu feed do Twitter.  
+1. [Python](https://www.python.org/)<br>
+Python é uma linguagem de programação interpretada, de alto nível e de propósito geral, que foi criada por Guido van Rossum em 1991. É conhecida por sua simplicidade e facilidade de uso, tornando-a uma das linguagens de programação mais populares em uso hoje em dia. É utilizado em muitas áreas, incluindo desenvolvimento web, análise de dados, inteligência artificial, aprendizado de máquina, automação de tarefas, jogos e muito mais. É também uma das linguagens de programação mais utilizadas em ensino e pesquisa, pois é fácil de aprender e tem muitas bibliotecas de código aberto disponíveis.
 
-2. [TypeScript](https://www.typescriptlang.org/)<br>
-TypeScript é uma linguagem de programação fortemente tipada que se baseia em JavaScript, oferecendo melhores ferramentas em qualquer escala. O TypeScript adiciona sintaxe adicional ao JavaScript para oferecer suporte a uma integração mais estreita com seu editor. Detecte erros no início do seu editor. O código TypeScript é convertido em JavaScript, que é executado em qualquer lugar que o JavaScript seja executado: em um navegador, em Node.js ou Deno e em seus aplicativos. O TypeScript entende JavaScript e usa inferência de tipos para fornecer ótimas ferramentas sem código adicional.
+2. [Jupyther](https://jupyter.org/)<br>
+Jupyter é uma plataforma de código aberto para computação interativa em diversas linguagens de programação, incluindo Python, R, Julia e outras. A palavra "Jupyter" é uma combinação dos nomes das três linguagens de programação que inicialmente suportavam a plataforma: Julia, Python e R. Ele é uma plataforma poderosa e versátil para computação interativa em diversas linguagens de programação. É amplamente utilizado para análise de dados, prototipação de aplicativos, educação e colaboração em tempo real. A plataforma é apoiada por uma comunidade de desenvolvedores ativos que continuam a melhorá-la e expandi-la.
 
-3. [React Native](https://reactnative.dev/)<br>
-React Native é um framework JavaScript para escrever aplicativos móveis reais e de renderização nativa para iOS e Android. Ele é baseado no React, a biblioteca JavaScript do Facebook para construir interfaces de usuário, mas em vez de direcionar o navegador, ele tem como alvo plataformas móveis.
+3. [Selenium](https://selenium-python.readthedocs.io/)<br>
+Selenium é uma ferramenta de automação de testes de software que permite aos usuários testar aplicativos da web em vários navegadores e sistemas operacionais. Ele é usado principalmente para testar a funcionalidade e a aparência de aplicativos da web em diferentes configurações de ambiente. O Selenium Python é uma biblioteca com diversos métodos que ajudam na automação web. Em suma, as funções permitem controlar o funcionamento de uma página e a interação com ela de forma automática.
 
-4. [NestJS](https://nestjs.com/)<br>
-Nest (NestJS) é um framework para criar aplicativos Node.js eficientes e escaláveis ​​do lado do servidor. Ele usa JavaScript progressivo, é construído com e suporta totalmente TypeScript (ainda permite que os desenvolvedores codifiquem em JavaScript puro) e combina elementos de POO (Programação Orientada a Objetos), PF (Programação Funcional) e PRF (Programação Reativa Funcional).<br>
-Sob o capô, o Nest faz uso de frameworks robustos de servidor HTTP como o Express (o padrão) e, opcionalmente, pode ser configurado para usar o Fastify também!
-No entanto, embora existam muitas bibliotecas, auxiliares e ferramentas excelentes para Node (e JavaScript do lado do servidor), nenhuma delas resolve efetivamente o principal problema de - Arquitetura.<br>
-A Nest fornece uma arquitetura de aplicativo pronta para uso que permite que desenvolvedores e equipes criem aplicativos altamente testáveis, escaláveis, pouco acoplados e de fácil manutenção. A arquitetura é fortemente inspirada no Angular.
+4. [Beautiful Soup](https://pypi.org/project/beautifulsoup4/#:~:text=Beautiful%20Soup%20is%20a%20library,and%20modifying%20the%20parse%20tree.)<br>
+Beautiful Soup é uma biblioteca Python utilizada para extrair dados de arquivos HTML e XML. Ela é usada para fazer análise e scraping de dados de páginas web, facilitando o processo de extração de informações de páginas da web. A biblioteca é compatível com Python 2 e 3. O Beautiful Soup é uma biblioteca Python poderosa e fácil de usar que permite extrair informações de arquivos HTML e XML. É capaz de lidar com páginas da web malformadas e oferece uma série de recursos úteis para extrair informações específicas de uma página da web. É uma ferramenta valiosa para desenvolvedores e analistas que trabalham com dados da web.
 
-5. [TypeORM](https://typeorm.io/)<br>
-TypeORM é um ORM que pode ser executado em plataformas NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo e Electron e pode ser usado com TypeScript e JavaScript (ES5, ES6, ES7, ES8). Seu objetivo é sempre oferecer suporte aos recursos JavaScript mais recentes e fornecer recursos adicionais que o ajudem a desenvolver qualquer tipo de aplicativo que use bancos de dados - desde pequenos aplicativos com algumas tabelas até aplicativos corporativos de grande escala com vários bancos de dados. O TypeORM é altamente influenciado por outros ORMs, como Hibernate, Doctrine e Entity Framework.
+5. [Pandas](https://pandas.pydata.org/)<br>
+Pandas é uma biblioteca Python de análise de dados que oferece uma variedade de recursos para manipulação, análise e visualização de dados. A biblioteca Pandas oferece estruturas de dados flexíveis e de alto desempenho, como o DataFrame e a Series, que permitem armazenar e manipular dados em tabelas de várias dimensões. O DataFrame, em particular, é uma estrutura de dados poderosa que permite trabalhar com tabelas de dados com colunas nomeadas e indexação flexível. Ela é uma das bibliotecas Python mais utilizadas em projetos de ciência de dados e análise financeira, e é uma ferramenta indispensável para lidar com grandes volumes de dados e para realizar tarefas complexas de manipulação e análise de dados.
 
-6. [SQLite](https://www.sqlite.org/index.html)<br>
-SQLite é uma biblioteca de linguagem C que implementa um mecanismo de banco de dados SQL pequeno, rápido, independente, de alta confiabilidade e com todos os recursos. SQLite é o mecanismo de banco de dados mais usado no mundo. O SQLite está embutido em todos os telefones celulares e na maioria dos computadores e vem dentro de inúmeros outros aplicativos que as pessoas usam todos os dias.
+### • Proposta do algoritmo
 
-7. [WebSockets](https://developer.mozilla.org/pt-BR/docs/Web/API/WebSockets_API)<br>
-WebSocket é uma tecnologia que permite a comunicação bidirecional por canais full-duplex sobre um único soquete Transmission Control Protocol (TCP). Ele é projetado para ser executado em browsers e servidores web que suportem o HTML5, mas pode ser usado por qualquer cliente ou servidor de aplicativos. A API WebSocket está sendo padronizada pelo W3C e o protocolo WebSocket está sendo padronizado pelo IETF.
+O Scratch Projects Web Scraper (SPWS), uma ferramenta de software projetada especificamente para extração automatizada de dados de projetos do Scratch. O SPWS é uma ferramenta poderosa e flexível de web scraping que pode navegar pelo repositório de projetos do Scratch, identificar projetos relevantes com base em critérios definidos pelo usuário e extrair dados relevantes dos arquivos do projeto para análise adicional. Isso permite que pesquisadores e educadores reúnam informações de maneira eficiente sobre práticas de programação, resultados de aprendizado e interações comunitárias no ecossistema do Scratch.
 
-8. [HTTP/S](https://datatracker.ietf.org/doc/html/rfc2616)<br>
-O HTTP é um protocolo para buscar recursos como documentos HTML. É a base de qualquer troca de dados na Web e é um protocolo cliente-servidor, o que significa que as solicitações são iniciadas pelo destinatário, geralmente o navegador da Web. Um documento completo é reconstruído a partir dos diferentes subdocumentos obtidos, por exemplo, texto, descrição do layout, imagens, vídeos, scripts e muito mais.
+O desenvolvimento do SPWS representa um passo importante no suporte à pesquisa e análise em larga escala baseadas em dados na comunidade do Scratch. Ao fornecer uma solução automatizada e personalizável para extrair dados de projetos do Scratch, o SPWS permite que pesquisadores e educadores obtenham informações valiosas sobre como os usuários aprendem programação, a eficácia de várias estratégias de ensino e o impacto da plataforma Scratch no pensamento computacional e na criatividade.
 
-9. [REST API](https://standards.rest/)<br>
-API REST, também chamada de API RESTful, é uma interface de programação de aplicações (API ou API web) que está em conformidade com as restrições do estilo de arquitetura REST, permitindo a interação com serviços web RESTful. REST é a sigla em inglês para "Representational State Transfer", que em português significa tansferência de estado representacional. Essa arquitetura foi criada pelo cientista da computação Roy Fielding.
 
-10. [Google OAuth2 Single Sign-On](https://docs.expo.dev/versions/latest/sdk/google/)<br>
-OAuth 2.0, que significa “Autorização Aberta”, é um padrão projetado para permitir que um site ou aplicativo acesse recursos hospedados por outros aplicativos da Web em nome de um usuário. Ele substituiu o OAuth 1.0 em 2012 e agora é o padrão de fato do setor para autorização online. OAuth 2.0 fornece acesso consentido e restringe ações do que o aplicativo cliente pode realizar em recursos em nome do usuário, sem nunca compartilhar as credenciais do usuário.
-
-11. [Expo SDK](https://expo.dev/)<br>
-Expo é um framework e uma plataforma para aplicações React universais. É um conjunto de ferramentas e serviços construídos em torno de plataformas nativas e React Native que ajudam você a desenvolver, construir, implantar e iterar rapidamente em aplicativos iOS, Android e web a partir da mesma base de código JavaScript/TypeScript.
-
-12. [Expo Go](https://expo.dev/client)<br>
-O Expo Go/Expo Client fornece um SDK predefinido com APIs comumente usadas, como componentes básicos de visualização, imagens, acesso à câmera, notificações, informações do dispositivo e muito mais. O SDK predefinido atende às necessidades de muitos aplicativos profissionais que usam o fluxo de trabalho gerenciado de hoje.
-
-### • Proposta do sistema
-
-O aplicativo “XXXXX” vem em um contexto onde o ingresso na universidade é sempre um assunto que envolve os ânimos e expectativas de todos aqueles que se preparam durante anos para alcançá-lo. Aliado a isso, surge uma grande pergunta: “Que curso devo fazer?”, ela é bastante subjetiva e pode ser encarada com diversas perspectivas. 
-
-Numa tentativa de propor sugestões para auxiliar os vestibulandos e os futuros ingressantes na universidade, o aplicativo realiza perguntas aos vestibulandos que o utilizam e sugere cursos que melhor se aderem ao seu perfil de respostas. Por isso, é extremamente importante conhecer bem os cursos à sua disposição levando em conta aspectos como: notas de corte, localização, quantidade de vagas, matérias, período, maneiras de ingressar e entre outras informações. A partir delas é possível ter uma base melhor para definir quais cursos você possui mais afinidade e quais se adequam melhor aos seus planos pessoais. Daí surge a importância de universidades como a UPE (Universidade de Pernambuco) disponibilizarem essas informações de forma acessível a maior quantidade de pessoas possível. Ademais, também é interessante encontrar meios alternativos de auxiliar esses ingressantes a identificar suas próprias preferências. 
-
-Diante disso o “XXXXX” apresenta-se como um aplicativo mobile que visa disponibilizar informações detalhadas sobre o Campus Garanhuns da UPE e seus cursos, aproximando a Universidade da sociedade. Além disso, através de meios lúdicos, pretende apoiar a tomada de decisão dos alunos que anseiam ingressar em algum dos cursos ofertados.
-
-### • Acrônimos
-
-| Acrônimo/Abreviação | Significado e descrição |
-| --- | --- |
-| API | Interface de programação de aplicativos |
-| UML | Unified Modeling Language |
-| DDoS | Ataques cibernéticos com a finalidade de tornar o sistema indisponível |
-| Framework | Uma estrutura de código genérica e padrão para se desenvolver um determinado software com maior ênfase na reutilização de código |
-| RNF | Identificador de um requisito não funcional |
-| MVC | Padrão de projeto Model-View-Controller para estruturamento de webservices |
-| NestJS | Framework de desenvolvimento de aplicações webservice e serviços de back-end |
-| Back-end | É um termo que representa a aplicação residente no lado do servidor |
-| MSC | Model-Service-Controller para estruturamento do projeto |
-| JSVM | JavaScript Virtual Machine |
