@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rootDir = $(pwd)
+rootDir=$(pwd)
 
 # Check if .cache/puppeteer/chrome folder exists before applying the "chrome patch" to disable sandbox
 if [ -d ".cache/puppeteer/chrome" ]; then
