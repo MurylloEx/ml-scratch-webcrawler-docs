@@ -12,15 +12,6 @@ A escolha do **React Native**, como framework para desenvolvimento da aplicaçã
 - Uso de JavaScript (ou o superset TypeScript), linguagem amplamente utilizada e consagrada no mercado de desenvolvimento web;
 - Uso da biblioteca React para construções de UI o que permite reaproveitamento de conhecimentos do desenvolvimento web com ReactJS;
 
-Já a escolha do **NestJS**, como framework para desenvolvimento de todo o backend da aplicação se deve pelos seguintes pontos:
-
-- Tem como filosofia resolver o principal problema dos projetos Web: **A Arquitetura**;
-- Utiliza uma arquitetura baseada na do Angular, completamente opinativa e garante a aplicação de princípios SOLID e muitos padrões de projetos;
-- É escalável, elegante e utiliza o melhor de outros frameworks (Asp.Net, Spring, Express, Fastify, etc.);
-- Facilita integrações com ORMs e também com outros provedores de bancos de dados;
-- Facilita a validação de dados utilizando decoradores, sem utilizar exaustivas expressões regulares que evidenciam projetos imaturos de pessoas sem experiência em desenvolvimento, já que tornam muito suja a visão do código;
-- Utiliza nativamente o padrão de arquitetura MVC, acrescentando o conceito de módulos e serviços para compartimentar regras de negócio, etc.
-
 ### C2.3 Quais são as linguagens de programação utilizadas dentro do projeto?
 
 A principal linguagem de programação utilizada dentro do projeto é JavaScript em conjunto com o seu superset TypeScript, que adiciona tipagem para a linguagem e o paradigma orientado a objetos completo, além de generics, collections, entre outros.
@@ -67,16 +58,6 @@ No front-end mobile, foram utilizados os padrões:
 - **Service pattern**: Padrão utilizado para: envolver regras de negócio, definir o formato das requisições HTTP e também definir de que forma o cliente deverá se autenticar;
 - **React Provider pattern**: Padrão utilizado para realizar a gestão de informações dentro do cliente, evitando prop-drilling;
 - **Hook pattern**: Padrão amplamente utilizado para a reutilização de lógica entre os hooks components do React;
-
-Já no back-end, foram utilizados:
-
-- **MSC (Model, Service, Controller) pattern**: Utilizado como uma adaptação do padrão MVC, visto que por se tratar de uma API a camada de View não existe;
-- **Pipe and filters pattern**: Utilizado para filtrar as exceções e retornar o erro de uma forma amigável para o cliente;
-- **Interceptor pattern**: Utilizado para: modificar respostas, verificar a versão do cliente, estratégia de cache e para controlar o tempo de resposta da requisição;
-- **Guard pattern**: Utilizado para gerenciar os acessos às rotas;
-- **Decorator pattern**: Utilizado extensivamente ao longo de toda a aplicação, tanto para documentá-la, quanto para adicionar metadados;
-- **Adapter pattern**: Utilizado no websocket, para envolver o serviço HTTP e adaptá-lo para ser um gateway de websocket;
-- **Strategy pattern**: Utilizado para definir a estratégia de login;
 
 ### C2.8 Quais são as restrições e limitações do projeto?
 
@@ -129,31 +110,6 @@ O **XXXXX** divide todos os seus módulos e classes em arquivos, que contemplam 
       \-> themes
     \-> pages
     \-> routes
-```
-
-##### Estrutura de Arquivos do Back-end:
-
-```
-\ root
-  \-> database
-  \-> dist
-  \-> node_modules
-  \-> src
-    \-> config
-    \-> controllers
-    \-> docs
-    \-> exceptions
-    \-> filters
-    \-> hooks
-    \-> models
-    \-> modules
-    \-> security
-      \-> guards
-    \-> services
-    \-> validators
-    \-> views
-      \-> mails
-    \-> websocket
 ```
 
 #### C2.9.4 Containers e suas responsabilidades
