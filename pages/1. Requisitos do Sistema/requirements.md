@@ -1,22 +1,15 @@
 Requisitos são, além de funções, objetivos, propriedades, restrições que o sistema deve possuir para satisfazer contratos, padrões ou especificações de acordo com o(s) usuário(s). De forma mais geral um requisito é uma condição necessária para satisfazer um objetivo. Nos próximos tópicos você verá uma lista resumida dos requisitos funcionais que existem e dos requisitos não-funcionais
 
-> [!ATTENTION]
-> Você pode visualizar todos os requisitos arquiteturais completos do sistema e sua relação com requisitos funcionais e não funcionais na **seção 1.3** desta documentação.
-
 ### 1.1 Requisitos Funcionais
 
 | Requisito | Descrição | Classificação |
 | --- | --- | --- |
-| RF001. Exibir cursos de um determinado Campus | O usuário deverá ser capaz de visualizar quais cursos são ofertados pela UPE em todo o estado. | Essencial | 
-| RF002. Transparecer informações de concorrência | O usuário deverá ser capaz de visualizar as informações de concorrência de cada um dos cursos ofertados pela UPE. | Essencial | 
-| RF003. Indicar notas de corte | O usuário deverá ser capaz de visualizar as notas de corte de cada um dos cursos ofertados pela UPE. | Essencial | 
-| RF004. Divulgar maiores notas do curso no ano anterior | O usuário deverá ser capaz de visualizar as maiores notas alcançadas em cada um dos cursos da UPE no ano anterior. | Essencial |
-| RF005. Informar maneiras de ingressar | O usuário deverá ser capaz de visualizar quais são as maneiras possíveis de ingressar em um dos cursos da UPE. | Desejável |
-| RF006. Apresentar informações sobre o curso | O usuário deverá ser capaz de visualizar informações gerais sobre cada um dos cursos ofertados pela UPE. | Desejável |
-| RF007. Exibir perfil do curso | O usuário deverá ser capaz de visualizar informações detalhadas sobre como cada um dos cursos ofertados pela UPE é estruturado. | Desejável |
-| RF008. Informar corpo docente | O usuário deverá ser capaz de visualizar o corpo docente de cada um dos cursos ofertados pela UPE. | Desejável |
-| RF009. Detalhar docentes | O usuário deverá ser capaz de visualizar detalhes sobre cada um dos docentes dos cursos ofertados pela UPE. | Desejável |
-| RF010. Apresentar áreas de atuação | O usuário deverá ser capaz de visualizar as possíveis áreas de atuação de cada um dos cursos ofertados pela UPE. | Desejável |
+| RF001. Extrair identificadores e metadados dos projetos do scratch | O algoritmo deverá ser capaz de extrair informações relevantes dos projetos. | Essencial | 
+| RF002. Obter as informações dos blocos utilizados em cada um dos projetos | O algoritmo deverá ser capaz de obter, através de um JSON, os blocos dos projetos. | Essencial | 
+| RF003. Realizar a contagem dos tipos blocos utilizados | O algoritmo deverá ser capaz de contar os tipos de blocos para classificá-los. | Importante | 
+| RF004. Baixar projetos que já foram armazenados | O usuário deverá ser capaz de baixar, através de um CSV, todos os projetos já armazenados no banco. | Importante |
+| RF005. Realizar pesquisa de um projeto | O usuário deverá ser capaz de pesquisar por um projeto específico através de um link. | Essencial |
+| RF006. Exibir dados dos projetos | O usuário deverá ser capaz de visualizar informações gerais sobre cada um dos projetos, após sua pesquisa. | Importante |
 
 
 > [!TIP]
