@@ -50,23 +50,20 @@ Se concentra na funcionalidade que o sistema disponibiliza para o usuároi final
 1. [Python](https://www.python.org/)<br>
 Python é uma linguagem de programação interpretada, de alto nível e de propósito geral, que foi criada por Guido van Rossum em 1991. É conhecida por sua simplicidade e facilidade de uso, tornando-a uma das linguagens de programação mais populares em uso hoje em dia. É utilizado em muitas áreas, incluindo desenvolvimento web, análise de dados, inteligência artificial, aprendizado de máquina, automação de tarefas, jogos e muito mais. É também uma das linguagens de programação mais utilizadas em ensino e pesquisa, pois é fácil de aprender e tem muitas bibliotecas de código aberto disponíveis.
 
-2. [Jupyter](https://jupyter.org/)<br>
-Jupyter é uma plataforma de código aberto para computação interativa em diversas linguagens de programação, incluindo Python, R, Julia e outras. A palavra "Jupyter" é uma combinação dos nomes das três linguagens de programação que inicialmente suportavam a plataforma: Julia, Python e R. Ele é uma plataforma poderosa e versátil para computação interativa em diversas linguagens de programação. É amplamente utilizado para análise de dados, prototipação de aplicativos, educação e colaboração em tempo real. A plataforma é apoiada por uma comunidade de desenvolvedores ativos que continuam a melhorá-la e expandi-la.
+2. [Scratch](https://scratch.mit.edu/)<br>
+Scratch é uma linguagem de programação visual desenvolvida pela MIT Media Lab para crianças e jovens iniciantes na programação. Ela permite que os usuários criem animações, jogos, histórias interativas e outros projetos digitais, usando blocos de código coloridos que podem ser arrastados e soltos em uma interface gráfica amigável e intuitiva. O Scratch é uma excelente ferramenta para introduzir as crianças e jovens ao mundo da programação de forma lúdica e divertida. Com sua interface visual intuitiva, ampla comunidade e recursos educacionais, o Scratch oferece uma forma agradável e eficaz de desenvolver habilidades importantes de programação e pensamento computacional.
 
-3. [Selenium](https://selenium-python.readthedocs.io/)<br>
-Selenium é uma ferramenta de automação de testes de software que permite aos usuários testar aplicativos da web em vários navegadores e sistemas operacionais. Ele é usado principalmente para testar a funcionalidade e a aparência de aplicativos da web em diferentes configurações de ambiente. O Selenium Python é uma biblioteca com diversos métodos que ajudam na automação web. Em suma, as funções permitem controlar o funcionamento de uma página e a interação com ela de forma automática.
+3. [Figma](https://www.figma.com/)<br>
+O Figma é uma ferramenta de design gráfico baseada em nuvem, que permite que os usuários criem e colaborem em projetos de design de forma rápida e fácil. É amplamente usado por designers de UI/UX, mas também pode ser usado por qualquer pessoa que queira criar um design gráfico. Com sua capacidade colaborativa e de criação de protótipos interativos, é uma escolha popular para equipes de design e profissionais que buscam uma ferramenta poderosa para suas necessidades de design.
 
-4. [Beautiful Soup](https://pypi.org/project/beautifulsoup4/#:~:text=Beautiful%20Soup%20is%20a%20library,and%20modifying%20the%20parse%20tree.)<br>
-Beautiful Soup é uma biblioteca Python utilizada para extrair dados de arquivos HTML e XML. Ela é usada para fazer análise e scraping de dados de páginas web, facilitando o processo de extração de informações de páginas da web. A biblioteca é compatível com Python 2 e 3. O Beautiful Soup é uma biblioteca Python poderosa e fácil de usar que permite extrair informações de arquivos HTML e XML. É capaz de lidar com páginas da web malformadas e oferece uma série de recursos úteis para extrair informações específicas de uma página da web. É uma ferramenta valiosa para desenvolvedores e analistas que trabalham com dados da web.
-
-5. [Pandas](https://pandas.pydata.org/)<br>
-Pandas é uma biblioteca Python de análise de dados que oferece uma variedade de recursos para manipulação, análise e visualização de dados. A biblioteca Pandas oferece estruturas de dados flexíveis e de alto desempenho, como o DataFrame e a Series, que permitem armazenar e manipular dados em tabelas de várias dimensões. O DataFrame, em particular, é uma estrutura de dados poderosa que permite trabalhar com tabelas de dados com colunas nomeadas e indexação flexível. Ela é uma das bibliotecas Python mais utilizadas em projetos de ciência de dados e análise financeira, e é uma ferramenta indispensável para lidar com grandes volumes de dados e para realizar tarefas complexas de manipulação e análise de dados.
-
-6. [Flask](https://flask.palletsprojects.com/en/2.2.x/)<br>
+4. [Flask](https://flask.palletsprojects.com/en/2.2.x/)<br>
 O Flask é um framework de desenvolvimento web em Python que permite criar aplicativos web rapidamente e de forma fácil. Ele é leve, flexível e vem com uma ampla gama de recursos e extensões que podem ser usados para criar aplicativos web escaláveis e personalizados. Algumas das principais características do Flask incluem rotas de URL simples, templates Jinja2 para renderização de HTML, suporte a sessões de usuário e cookies, suporte a extensões de terceiros para tarefas específicas, suporte a bancos de dados, dentre outros.
 
-7. [React](https://react.dev/)<br>
+5. [React](https://react.dev/)<br>
 O React é uma biblioteca JavaScript de código aberto usada para criar interfaces de usuário dinâmicas e interativas para aplicativos web e móveis. Ele foi desenvolvido pelo Facebook e é amplamente utilizado por desenvolvedores em todo o mundo. O React é uma biblioteca JavaScript popular e altamente flexível usada para criar interfaces de usuário escaláveis, reutilizáveis e de alto desempenho para aplicativos web e móveis. Ele é amplamente utilizado e apoiado pela comunidade de desenvolvedores, tornando-o uma excelente escolha para projetos de desenvolvimento de software.
+
+6. [SQLite](https://www.sqlite.org/)<br>
+SQLite é uma biblioteca de linguagem C que implementa um mecanismo de banco de dados SQL pequeno, rápido, independente, de alta confiabilidade e com todos os recursos. SQLite é o mecanismo de banco de dados mais usado no mundo. O SQLite está embutido em todos os telefones celulares e na maioria dos computadores e vem dentro de inúmeros outros aplicativos que as pessoas usam todos os dias.
 
 ### • Proposta do algoritmo
 
