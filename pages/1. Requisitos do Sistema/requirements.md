@@ -4,7 +4,7 @@ Requisitos são, além de funções, objetivos, propriedades, restrições que o
 
 | Requisito | Descrição | Classificação |
 | --- | --- | --- |
-| RF001. Extrair identificadores e metadados dos projetos do scratch | O algoritmo deverá ser capaz de extrair informações relevantes dos projetos. | Essencial | 
+| RF001. Extrair identificadores e metadados dos projetos do Scratch | O algoritmo deverá ser capaz de extrair informações relevantes dos projetos. | Essencial | 
 | RF002. Obter as informações dos blocos utilizados em cada um dos projetos | O algoritmo deverá ser capaz de obter, através de um JSON, os blocos dos projetos. | Essencial | 
 | RF003. Realizar a contagem dos tipos blocos utilizados | O algoritmo deverá ser capaz de contar os tipos de blocos para classificá-los. | Importante | 
 | RF004. Baixar projetos que já foram armazenados | O usuário deverá ser capaz de baixar, através de um CSV, todos os projetos já armazenados no banco. | Importante |
