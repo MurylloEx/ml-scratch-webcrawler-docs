@@ -25,7 +25,7 @@ A principal linguagem de programação utilizada dentro do projeto é [Python](h
 
 O sistema **Scratch Projects Web Scraper (SPWS)** é dividido em duas camadas principais: front end e back end. A camada de front end é responsável por lidar com a interface do usuário e é desenvolvida com tecnologias como Scratch, Figma e React. Já a camada de back end é responsável por processar as requisições do usuário e fornecer os dados necessários para a interface do usuário. Essa camada é desenvolvida principalmente com Python e utiliza o framework Flask para facilitar o desenvolvimento. Além disso, a camada de back end faz uso do banco de dados relacional SQLite para armazenar e gerenciar os dados do sistema. A divisão em camadas front end e back end é justificada pela necessidade de separar as responsabilidades do sistema de forma clara e organizada, permitindo que cada camada seja desenvolvida de forma independente e com tecnologias específicas para cada tipo de tarefa. Isso também permite que a equipe de desenvolvimento trabalhe de forma mais eficiente e produtiva, já que cada membro pode se especializar em uma camada específica do sistema.
 
-### C2.6 Quais são as convenções utilizadas no projeto?
+### C2.5 Quais são as convenções utilizadas no projeto?
 
 Em todo o sistema (back e front) foram utilizadas as seguintes convenções:
 
@@ -35,7 +35,7 @@ Em todo o sistema (back e front) foram utilizadas as seguintes convenções:
 - **Convenção de Nomenclatura de Componentes** ([pascalCase](https://www.alura.com.br/artigos/convencoes-nomenclatura-camel-pascal-kebab-snake-case));
 - **Convenção de Nomenclatura de Pastas** ([kebab-case](https://www.alura.com.br/artigos/convencoes-nomenclatura-camel-pascal-kebab-snake-case));
 
-### C2.8 Quais são as restrições e limitações do projeto?
+### C2.6 Quais são as restrições e limitações do projeto?
 
 Uma das restrições e limitações do projeto é o limite de requisições na API do Scratch. Para evitar suspeitas de violação dos termos de serviço do Scratch, foi definido um limite de 1 requisição a cada 10 segundos no máximo. Caso esse limite seja excedido, a API do Scratch pode bloquear o acesso ao sistema, impedindo a coleta de dados. Além disso, outra restrição importante é a disponibilidade e qualidade dos dados fornecidos pela API do Scratch. Como o sistema depende desses dados para gerar seus resultados, é importante que a API esteja disponível e que os dados sejam confiáveis e atualizados. Caso contrário, o sistema pode apresentar falhas e inconsistências em seus resultados. Outras possíveis restrições e limitações podem surgir durante o desenvolvimento do sistema e devem ser avaliadas e tratadas pela equipe de desenvolvimento.
 

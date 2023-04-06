@@ -1,4 +1,4 @@
-### C1.1 O que é o sistema XXXXX?
+### C1.1 O que é o sistema Scratch Projects Web Scraper (SPWS)?
 
 O Scratch Projects Web Scraper (SPWS) é um projeto que tem como objetivo extrair dados estatísticos de um projeto público do Scratch. Esses dados incluem o número de estruturas de controle, operadores lógicos, sons e efeitos usados no projeto. Diferente do Doutor Scratch, que utiliza um sistema de pontuação para avaliar a qualidade do projeto, o SPWS foca em fornecer apenas o quantitativo dos recursos utilizados. O usuário pode acessar o site, apontar o ID de um projeto público do Scratch e obter as informações desejadas. O projeto utiliza tecnologias como Python, Scratch, Figma, Flask, React e SQLite para desenvolver as camadas de front-end e back-end, e se comunica com a API do Scratch para coletar os dados necessários.
 
