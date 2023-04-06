@@ -31,10 +31,9 @@
     "c4builder",
     "docsify"
   ],
-  "dependencies": {},
   "devDependencies": {
     "c4builder": "^0.2.16",
-    "commitizen": "^4.2.5",
+    "commitizen": "^4.3.0",
     "cz-conventional-changelog": "3.3.0",
     "husky": "^8.0.0",
     "serve": "^14.2.0",
