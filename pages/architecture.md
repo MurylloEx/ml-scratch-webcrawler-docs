@@ -5,7 +5,7 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 ```
 \ Arquitetura do Software (Esta página)
   \-> Requisitos do sistema
-  \-> Implantação
+  \-> Ambiente
   \-> C1. Visão Geral
     \-> C2. Sistema
       \-> C3. Algoritmo e Solução
@@ -19,7 +19,7 @@ A arquitetura está sendo expressa por meio deste documento através da abordage
 | --- | --- |
 | Arquitetura de Software | Nesta seção você verá um pouco sobre o que é o C4 Model, qual a abordagem utilizada na documentação, a proposta do sistema e um pouco sobre cada tecnologia utilizada no software. |
 | Requisitos do sistema | Nesta seção você terá um breve vislumbre sobre o que são esses requisitos e também como eles impactam na arquitetura proposta, sendo divididos em funcionais e não funcionais. |
-| Implantação | Nesta seção você verá como o software é implantado, sua infraestrutura. |
+| Ambiente | Nesta seção você verá como o clonar o repositório do projeto, configurar, instalar suas dependências e executar localmente. |
 | C1. Visão Geral | Nesta seção você verá o primeiro nível do C4 Model, sendo uma perspectiva de contexto da arquitetura do sistema. |
 | C2. Sistema | Nesta seção você verá o sistema como um todo do ponto de vista de contâineres, os quais se relacionam. Nessa visão são expostos os relacionamentos entre esses contâineres para garantir que a arquitetura funcione. |
 | C3. Algoritmo e Solução | Nesta seção estão expressos os detalhes de como o algoritmo funciona e como ele pode ser usado para resolver problemas semelhantes. |
@@ -29,7 +29,7 @@ Ao longo de toda esta documentação, você verá em detalhes como a arquitetura
 
 ### • O que é o C4 Model?
 
-O modelo C4 é uma abordagem fácil de aprender e amigável ao desenvolvedor para diagramação de arquitetura de software. Bons diagramas de arquitetura de software auxiliam na comunicação dentro/fora das equipes de desenvolvimento/produto de software, integração eficiente de novos funcionários, revisões/avaliações de arquitetura, identificação de riscos (por exemplo, tempestade de riscos), modelagem de ameaças (por exemplo, STRIDE/LINDDUN), etc. Ele foi criado por Simon Brown e é baseado na abordagem 4+1 de Philippe Kruchten e também no UML.
+O modelo C4 é uma abordagem fácil de aprender e amigável ao desenvolvedor para diagramação de arquitetura de software. Bons diagramas de arquitetura de software auxiliam na comunicação dentro/fora das equipes de desenvolvimento/produto de software, integração eficiente de novos funcionários, revisões/avaliações de arquitetura, identificação de riscos (por exemplo, tempestade de riscos), modelagem de ameaças (por exemplo, STRIDE/LINDDUN), etc. Ele foi criado por Simon Brown, é baseado na abordagem 4+1 de Philippe Kruchten e também no UML.
 
 ### • Como ler a documentação da forma correta?
 
@@ -70,5 +70,3 @@ SQLite é uma biblioteca de linguagem C que implementa um mecanismo de banco de 
 O Scratch Projects Web Scraper (SPWS), uma ferramenta de software projetada especificamente para extração automatizada de dados de projetos do Scratch. O SPWS é uma ferramenta poderosa e flexível de web scraping que pode navegar pelo repositório de projetos do Scratch, identificar projetos relevantes com base em critérios definidos pelo usuário e extrair dados relevantes dos arquivos do projeto para análise adicional. Isso permite que pesquisadores e educadores reúnam informações de maneira eficiente sobre práticas de programação, resultados de aprendizado e interações comunitárias no ecossistema do Scratch.
 
 O desenvolvimento do SPWS representa um passo importante no suporte à pesquisa e análise em larga escala baseadas em dados na comunidade do Scratch. Ao fornecer uma solução automatizada e personalizável para extrair dados de projetos do Scratch, o SPWS permite que pesquisadores e educadores obtenham informações valiosas sobre como os usuários aprendem programação, a eficácia de várias estratégias de ensino e o impacto da plataforma Scratch no pensamento computacional e na criatividade.
-
-

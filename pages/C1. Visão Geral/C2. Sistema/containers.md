@@ -25,7 +25,24 @@ A principal linguagem de programação utilizada dentro do projeto é [Python](h
 
 O sistema **Scratch Projects Web Scraper (SPWS)** é dividido em duas camadas principais: front end e back end. A camada de front end é responsável por lidar com a interface do usuário e é desenvolvida com tecnologias como Scratch, Figma e React. Já a camada de back end é responsável por processar as requisições do usuário e fornecer os dados necessários para a interface do usuário. Essa camada é desenvolvida principalmente com Python e utiliza o framework Flask para facilitar o desenvolvimento. Além disso, a camada de back end faz uso do banco de dados relacional SQLite para armazenar e gerenciar os dados do sistema. A divisão em camadas front end e back end é justificada pela necessidade de separar as responsabilidades do sistema de forma clara e organizada, permitindo que cada camada seja desenvolvida de forma independente e com tecnologias específicas para cada tipo de tarefa. Isso também permite que a equipe de desenvolvimento trabalhe de forma mais eficiente e produtiva, já que cada membro pode se especializar em uma camada específica do sistema.
 
-### C2.5 Quais são as convenções utilizadas no projeto?
+### C2.5 Como cada container se comunica dentro do projeto?
+
+- **Aplicativo Móvel**:
+  - O usuário final realiza suas ações na aplicação e se comunica com o container API REST, utilizando o protocolo HTTP e como formato de serialização humanamente legível o JSON. A comunicação é feita utilizando criptografia, por motivos de segurança, com certificados SSL/TLS válidos sendo utilizados. A comunicação é mediada por um **proxy reverso** chamado CloudFlare que será visto no próximo container, o container da API;
+- **API REST**:
+  - Se comunica tanto com o container da aplicação móvel, quanto com o do banco de dados, através de uma ORM (Nesse caso, a TypeORM), que persiste toda a informação do sistema. Este container tem sua comunicação mediada por um **proxy reverso** chamado CloudFlare que é responsável por criar um túnel criptografado entre o aplicativo móvel e a API REST. O seu principal objetivo é deter ataques e assegurar que os dados não sejam lidos enquanto trafegam para seu destino;
+- **Banco de Dados**:
+  - Se comunica com o container API REST e também com um arquivo no sistema de arquivos no diretório ``root/database/db.sqlite`` onde lê e escreve os dados da aplicação que devem ser persistidos;
+- **WebSocket**:
+  - Se comunica com o container do aplicativo móvel, com o intuito de manter uma conexão constante entre o aplicativo e o servidor. O Gateway WebSocket serve como um ponto de acesso para comunicação em tempo real entre o dispositivo móvel e o servidor de API;
+- **Sistema de E-mail**:
+  - Se comunica com o container da API REST, para enviar e-mails para o usuário. Esse sistema de e-mail se chama SMTP2GO e é um serviço de API para envio de e-mails SMTP transacionais;
+- **Sistema de Notificações**:
+  - Se comunica com o container do aplicativo móvel, para enviar notificações para o usuário. A solicitação de notificação push é recebida do próprio aplicativo móvel, que é então processada e enviada para os servidores Expo Push Notifications;
+- **Sistema de Single Sign-On**:
+  - Se comunica com o container do aplicativo móvel, para permitir o usuário se autenticar no sistema utilizando sua conta do Google. As solicitações de tokens de acesso são feitas pelo aplicativo móvel e então processadas pelo Sistema de Single Sign-On;
+
+### C2.6 Quais são as convenções utilizadas no projeto?
 
 Em todo o sistema (back e front) foram utilizadas as seguintes convenções:
 
@@ -35,56 +52,27 @@ Em todo o sistema (back e front) foram utilizadas as seguintes convenções:
 - **Convenção de Nomenclatura de Componentes** ([pascalCase](https://www.alura.com.br/artigos/convencoes-nomenclatura-camel-pascal-kebab-snake-case));
 - **Convenção de Nomenclatura de Pastas** ([kebab-case](https://www.alura.com.br/artigos/convencoes-nomenclatura-camel-pascal-kebab-snake-case));
 
-### C2.6 Quais são as restrições e limitações do projeto?
+### C2.7 Quais são as restrições e limitações do projeto?
 
 Uma das restrições e limitações do projeto é o limite de requisições na API do Scratch. Para evitar suspeitas de violação dos termos de serviço do Scratch, foi definido um limite de 1 requisição a cada 10 segundos no máximo. Caso esse limite seja excedido, a API do Scratch pode bloquear o acesso ao sistema, impedindo a coleta de dados. Além disso, outra restrição importante é a disponibilidade e qualidade dos dados fornecidos pela API do Scratch. Como o sistema depende desses dados para gerar seus resultados, é importante que a API esteja disponível e que os dados sejam confiáveis e atualizados. Caso contrário, o sistema pode apresentar falhas e inconsistências em seus resultados. Outras possíveis restrições e limitações podem surgir durante o desenvolvimento do sistema e devem ser avaliadas e tratadas pela equipe de desenvolvimento.
 
-#### C2.9.1 Módulos
+### C2.8 Como as responsabilidades são separadas entre os containers?
 
-O **XXXXX** divide seus containers internamente em pacotes, arquivos, módulos, serviços, classes, interfaces e subrotinas, com níveis de escopo reduzidos cada vez mais, respectivamente. Dentro de cada container podemos ter um ou mais dos níveis de escopo mencionados. Por exemplo, o front-end é dividido em pacotes, arquivos, serviços, classes, interfaces e subrotinas. Já o back-end tem o conceito de módulos, sendo dividido em pacotes, arquivos, serviços, módulos, classes, interfaces, subrotinas. 
+#### C2.8.1 Subsistemas
 
-As responsabilidades de um arquivo são maiores que as de uma classe, pois um arquivo engloba classes e outros recursos como interfaces e funções. Podemos enxergar os containers como o maior nível de escopo possível que descreve o projeto.
-
-#### C2.9.2 Subsistemas
-
-O **XXXXX** interage com subsistemas desvinculados da aplicação principal. Isso ocorre pois nem todos os serviços necessários e recursos do sistema podem ser criados do zero, então, são utilizados sistemas prontos que possuem integrações disponíveis. Dessa forma, o sistema é composto por pequenos subsistemas como:
+O **Scratch Projects Web Scraper (SPWS)** interage com subsistemas desvinculados da aplicação principal. Isso ocorre pois nem todos os serviços necessários e recursos do sistema podem ser criados do zero, então, são utilizados sistemas prontos que possuem integrações disponíveis. Dessa forma, o sistema é composto por pequenos subsistemas como:
 
 - **Expo Notifications**;
 - **Google Single Sign-On**;
 - **SMTP2GO (Sistema de E-mail)**;
 - **WebSocket Gateway**;
 
-#### C2.9.3 Sistema de Arquivos (Estrutura)
-
-O **XXXXX** divide todos os seus módulos e classes em arquivos, que contemplam as classes, interfaces e subrotinas. Os arquivos são importantes pois compõem a estrutura de arquivos do projeto no sistema de arquivos subjacente. Podemos visualizar a estrutura de arquivos do front-end e do back-end a seguir:
-
-##### Estrutura de Arquivos do Front-end:
-
-```
-\ root
-  \-> __mocks__
-  \-> node_modules
-  \-> assets
-  \-> tests
-  \-> src
-    \-> assets
-    \-> core
-      \-> components
-      \-> config
-      \-> hooks
-      \-> providers
-      \-> services
-      \-> themes
-    \-> pages
-    \-> routes
-```
-
-#### C2.9.4 Containers e suas responsabilidades
+#### C2.8.2 Containers e suas responsabilidades
 
 - **Aplicativo Móvel:**
   - Provê aos usuários acesso as funcionalidades a partir do aplicativo (cliente móvel);
 - **API REST:**
-  - Provê as funcionalidades do XXXXX via API REST JSON/HTTPS;
+  - Provê as funcionalidades do Scratch Projects Web Scraper (SPWS) via API REST JSON/HTTPS;
 - **Banco de Dados:**
   - Armazena dados dos campi da UPE (Universidade de Pernambuco) e de todo o sistema;
 - **WebSocket:**

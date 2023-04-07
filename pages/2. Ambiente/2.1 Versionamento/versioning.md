@@ -28,24 +28,14 @@ O próprio git facilita a utilização do GitFlow pois seu utilitário de linha 
 >[!TIP]
 >O commando ``git flow feature start <nome-da-funcionalidade>`` é um exemplo de instrução que pode ser utilizada para criar uma nova funcionalidade seguindo o padrão do GitFlow. Após a criação da funcionalidade, uma nova branch será gerada com o nome ``feature/<nome-da-funcionalidade>``. Para finalizar a branch e mesclá-la com a development, o comando é muito parecido, mudando apenas o termo start por finish: ``git flow feature finish <nome-da-funcionalidade>``. Para mais informações, consulte este [**cheatsheet**](https://danielkummer.github.io/git-flow-cheatsheet/).
 
-Agora que você conhece o modelo de fluxo de trabalho utilizado no versionamento Git, há mais alguns padrões importantes que o **XXXXX** adota com relação aos commits nos repositórios. São dois padrões utilizados para criar um commit, o primeiro é um lintter chamado ``Gitmoji`` que utiliza Emojis para classificar commits e marcá-los quanto a seu propósito. Cada Emoji possui um um significado e torna mais fácil entender o que o commit faz quando esse emoji é prefixado no título do commit. O Gitmoji proporciona dezenas de Emojis para serem utilizados.
+### 2.1.1 Clonando o repositório
 
->[!TIP]
->O Gitmoji pode ser instalado seguindo as instruções em [**Gitmoji Docs**](https://gitmoji.dev/). Para começar a utilizá-lo, ao invés de executar o comando ``git commit -m "minha-mensagem"`` você deverá utilizar o comando ``gitmoji -c``.
+Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Por último, mas não menos importante, há o segundo padrão de commit chamado ``Conventional Commits`` que é responsável por prefixar um termo no título do commit. Esse padrão de commit propõe que seja utilizada uma palavra para descrever a ação realizada no commit e facilitar para quem está a procura de certos commits e alterações realizadas, sem necessitar abrir o commit para ver quais alterações foram feitas. O ``Conventional Commits`` toma emprestado alguns termos da ``Convenção Angular``, que é um padrão amplamente utilizado na Google pelos desenvolvedores do Angular. Alguns dos termos são:
+### 2.1.2 Contribuindo com o projeto
 
-- ``fix`` (Correções de bugs);
-- ``feature`` (Adição de nova funcionalidade);
-- ``BREAKING CHANGE`` (Mudanças radicais/quebra de compatibilidade ou Major Release);
-- ``build`` (Alterações referentes à configurações de build);
-- ``chore`` (Alterações em arquivos de forma genérica, mudanças em pastas, renomeação de arquivos e pastas, mover diretórios);
-- ``ci`` (Continuous Integration - Configurações referentes à Integração Contínua);
-- ``docs`` (Alterações referentes à documentação do software);
-- ``style`` (Alterações em estilos CSS, SCSS ou estilização de interface gráfica em geral);
-- ``refactor`` (Alterações com propósito de refatorar o código-fonte do software);
-- ``perf`` (Alterações que impactam na performance/desempenho do software);
-- ``test`` (Alterações que adicionam ou modificam testes ou casos de teste).
+Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
->[!TIP]
->Um commit realizado no **XXXXX** com a aderência dos padrões de commit apresentados resulta em algo parecido com ```📝 docs: Updated README informations.```
+### 2.1.3 Reportando problemas
+
+Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

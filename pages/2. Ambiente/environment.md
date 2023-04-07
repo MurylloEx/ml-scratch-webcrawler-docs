@@ -1,4 +1,4 @@
-#### Infraestrutura
+#### Ambiente
 
 Para que o projeto possa ficar em execução por 24 horas por dia, 7 dias por semana é necessário hospedar o daemon da API REST em um servidor que suporte o Node.js na versão 12 ou superior.<br><br>
 No cenário do **XXXXX**, o servidor utilizado para hospedagem do sistema foi um servidor de placa única do tipo ASUS Tinkerboard com as seguintes especificações:
