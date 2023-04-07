@@ -17,18 +17,13 @@ Requisitos são, além de funções, objetivos, propriedades, restrições que o
 
 ### 1.2 Requisitos Não Funcionais
 
-Os requisitos não funcionais são aqueles requisitos que impactam na forma como o software será construído, especificando restrições e premissas que impactam do ponto de vista da qualidade como os requisitos funcionais deverão ser implementados. Veja os requisitos não funcionais do **XXXXX**:
+Os requisitos não funcionais são aqueles requisitos que impactam na forma como o software será construído, especificando restrições e premissas que impactam do ponto de vista da qualidade como os requisitos funcionais deverão ser implementados. Veja os requisitos não funcionais do SPWS:
 
 | Requisito | Descrição | Classificação |
 | --- | --- | --- |
-| RNF001. Tempo de Resposta | O aplicativo deverá apresentar tempos de resposta inferiores a 1000 ms, de forma a apresentar um carregamento suficientemente rápido. | Importante |
-| RNF002. Usuário Online | O aplicativo deverá permitir a conexão de até 100 usuários online simultaneamente. | Importante |
-| RNF003. Período Ativo | O aplicativo deve permanecer online 24 horas por dia, 7 dias por semana, com tolerância a interrupções de no máximo 2 horas em situações excepcionais para manutenções ou atualizações planejadas. | Importante |
-| RNF004. Compatibilidade | O sistema deve essencialmente funcionar na plataforma Android, visto que o iOS é uma plataforma cara e não é acessível para o momento. | Essencial |
-| RNF005. Proteção contra ataques DDoS | O sistema deverá utilizar CloudFlare para proteção contra ataques DDoS. | Desejável |
-| RNF006. Criptografia | O sistema deverá utilizar o HTTPS (Hyper Text Transfer Protocol Secure) como forma de criptografia. | Importante |
-| RNF007. Autenticação | O usuário deve ser capaz de realizar login através de sua conta Google utilizando o serviço SSO (Single Sign-On) da Google. | Essencial |
-| RNF008. Documentação das APIs REST | O endpoint do aplicativo deve ser bem documentado para facilitar integrações futuras com outros sistemas ou correções de implementações no front-end. | Importante |
+| RNF001. Facilidade de uso | A interface deve ser de fácil uso, onde os signos estejam posicionados para facilitar a interatividade do sistema. | Importante |
+| RNF002. Tempo de resposta | O objetivo do algoritmo é buscar eficiência no tempo de resposta, ou seja, ser capaz de processar os dados e gerar resultados de forma rápida e eficaz. | Importante |
+| RNF003. Legitimidade dos dados | O sistema é capaz de fornecer informações precisas e confiáveis sobre projetos desenvolvidos no Scratch, oferecendo aos usuários dados relevantes e úteis para análise e tomada de decisão. | Importante |
 
 > [!TIP]
 > Você pode visualizar todos os requisitos não funcionais na **seção 1.2** com maior nível de detalhes.
