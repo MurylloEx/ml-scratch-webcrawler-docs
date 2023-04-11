@@ -8,8 +8,9 @@ Requisitos são, além de funções, objetivos, propriedades, restrições que o
 | RF002. Obter as informações dos blocos utilizados em cada um dos projetos | O algoritmo deverá ser capaz de obter, através de um JSON, os blocos dos projetos. | Essencial | 
 | RF003. Realizar a contagem dos tipos blocos utilizados | O algoritmo deverá ser capaz de contar os tipos de blocos para classificá-los. | Importante | 
 | RF004. Baixar projetos que já foram armazenados | O usuário deverá ser capaz de baixar, através de um CSV, todos os projetos já armazenados no banco. | Importante |
-| RF005. Realizar pesquisa de um projeto | O usuário deverá ser capaz de pesquisar por um projeto específico através de um link. | Essencial |
+| RF005. Realizar pesquisa de um projeto | O usuário deverá ser capaz de pesquisar por um projeto específico através de um link. Caso esse projeto não esteja na base, será adicionado durante a busca. | Essencial |
 | RF006. Exibir dados dos projetos | O usuário deverá ser capaz de visualizar informações gerais sobre cada um dos projetos, após sua pesquisa. | Importante |
+| RF007. Realizar pesquisa de projetos por turma | O usuário deverá ser capaz de pesquisar projetos de uma turma específica. | Importante |
 
 
 > [!TIP]

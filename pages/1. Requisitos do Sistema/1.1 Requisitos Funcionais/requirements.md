@@ -49,7 +49,7 @@ Os requisitos funcionais determinam as funcionalidades que o software deve ter p
 
 | RF005 | Realizar pesquisa de um projeto |
 | --- | --- |
-| Descrição: | O usuário pode simplesmente copiar e colar o link do projeto desejado e obter acesso imediato a ele. |
+| Descrição: | O usuário pode simplesmente copiar e colar o link do projeto desejado e obter acesso imediato a ele. Caso esse projeto não esteja na base, será adicionado durante a busca. |
 | Atores: | Usuário |
 | Prioridade: | Essencial |
 | Entradas e pré-condições: | Entradas: Link do projeto Scratch. Pré-condições: Ter o ambiente rodando localmente. |
@@ -63,3 +63,12 @@ Os requisitos funcionais determinam as funcionalidades que o software deve ter p
 | Prioridade: | Importante |
 | Entradas e pré-condições: | Entradas: Realizar a pesquisa. Pré-condições: Possuir link do projeto Scratch. |
 | Saídas e pós-condições: | Saídas: Não possui saídas. Pós-condições: O usuário visualizará uma tela contendo as informações do projeto. |
+
+
+| RF007 | Realizar pesquisa de projetos por turma |
+| --- | --- |
+| Descrição: | O usuário deverá ser capaz de pesquisar projetos de uma turma específica. |
+| Atores: | Usuário |
+| Prioridade: | Importante |
+| Entradas e pré-condições: | Entradas: Realizar a pesquisa. Pré-condições: Possuir link de uma turma Scratch. |
+| Saídas e pós-condições: | Saídas: Informações dos projetos da turma. Pós-condições: O usuário visualizará uma lista de projetos. |

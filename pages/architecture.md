@@ -62,8 +62,11 @@ O Flask é um framework de desenvolvimento web em Python que permite criar aplic
 5. [React](https://react.dev/)<br>
 O React é uma biblioteca JavaScript de código aberto usada para criar interfaces de usuário dinâmicas e interativas para aplicativos web e móveis. Ele foi desenvolvido pelo Facebook e é amplamente utilizado por desenvolvedores em todo o mundo. O React é uma biblioteca JavaScript popular e altamente flexível usada para criar interfaces de usuário escaláveis, reutilizáveis e de alto desempenho para aplicativos web e móveis. Ele é amplamente utilizado e apoiado pela comunidade de desenvolvedores, tornando-o uma excelente escolha para projetos de desenvolvimento de software.
 
-6. [SQLite](https://www.sqlite.org/)<br>
-SQLite é uma biblioteca de linguagem C que implementa um mecanismo de banco de dados SQL pequeno, rápido, independente, de alta confiabilidade e com todos os recursos. SQLite é o mecanismo de banco de dados mais usado no mundo. O SQLite está embutido em todos os telefones celulares e na maioria dos computadores e vem dentro de inúmeros outros aplicativos que as pessoas usam todos os dias.
+6. [Supabase](https://supabase.com/)<br>
+O Supabase oferece uma variedade de serviços que podem ser facilmente integrados em aplicativos existentes ou usados para criar novos aplicativos. Os principais serviços incluem autenticação de usuários, armazenamento de arquivos, banco de dados relacional e notificações em tempo real. Supabase é uma plataforma poderosa e fácil de usar que oferece aos desenvolvedores tudo o que eles precisam para criar aplicativos web e móveis escaláveis e seguros.
+
+7. [Pandas](https://pandas.pydata.org/)<br>
+Pandas é uma biblioteca Python de análise de dados que oferece uma variedade de recursos para manipulação, análise e visualização de dados. A biblioteca Pandas oferece estruturas de dados flexíveis e de alto desempenho, como o DataFrame e a Series, que permitem armazenar e manipular dados em tabelas de várias dimensões. O DataFrame, em particular, é uma estrutura de dados poderosa que permite trabalhar com tabelas de dados com colunas nomeadas e indexação flexível. Ela é uma das bibliotecas Python mais utilizadas em projetos de ciência de dados e análise financeira, e é uma ferramenta indispensável para lidar com grandes volumes de dados e para realizar tarefas complexas de manipulação e análise de dados.
 
 ### • Proposta do algoritmo
 
