@@ -1,40 +1,48 @@
 @startuml "Component Diagram"
 
-title "Diagrama de Componentes do XXXXX"
+title "Diagrama de Componentes do SPWS"
 
-interface "ID Token e Access Token do Usuário Google" AS INTERF_GOOGLE_TOKEN
+left to right direction
 
-cloud "XXXXX Infrastructure" as CLOUD_01 {
+interface "Link do projeto do Scratch" AS INTERFACE_SCRATCH_PROJECT_LINK
 
-  component "Google SSO OAuth2 API" as COMP_OAUTH2_API {
-    cloud "Google Cloud Infrastructure" {
-      component "Google SSO Server" as COMP_GOOGLE_SSO_SERVER
-    }
-    component "Google Single Sign-On Expo Library" as COMP_GOOGLE_SSO_EXPO
-    COMP_GOOGLE_SSO_SERVER -0)- COMP_GOOGLE_SSO_EXPO
+cloud "Internet pública" as CLOUD_01 {
+
+  database "Supabase Database" as COMP_DATABASE {
+    component "Postgres Driver" as COMP_DATABASE_DRIVER
   }
 
-  component "Autorização OAuth2" as COMP_OAUTH2_AUTHORIZATION {
-    component "Rota de Autorização" as COMP_OAUTH2_ROUTE
-    component "Controlador do Google SSO" as COMP_SSO_CONTROLLER
-    component "Data Service NestJS" as COMP_OAUTH2_DATA_SERVICE
-    database "Database Module" as COMP_OAUTH2_DATABASE {
-      component "SQLite3 Driver" as COMP_OAUTH2_DATABASE_DRIVER
-    }
-    INTERF_GOOGLE_TOKEN -(0- COMP_OAUTH2_ROUTE
-    COMP_OAUTH2_ROUTE -(0- COMP_SSO_CONTROLLER
-    COMP_SSO_CONTROLLER -down(0- COMP_OAUTH2_DATA_SERVICE
-    COMP_OAUTH2_DATABASE_DRIVER -0)- COMP_OAUTH2_DATA_SERVICE
-    COMP_GOOGLE_SSO_EXPO 0)- COMP_OAUTH2_DATA_SERVICE
+  component "Scratch API" as COMP_SCRATCH_API {
+    component "Scratch MIT" as COMP_SCRATCH_SERVER
   }
 
 }
 
-note top of INTERF_GOOGLE_TOKEN
+cloud "SPWS Infrastructure" as CLOUD_02 {
+
+  component "Scratch Analyzer API" as COMP_OAUTH2_AUTHORIZATION {
+    component "Project Flask Resource" as COMP_PROJECT_FLASK_RESOURCE
+    component "Project Flask Controller" as COMP_PROJECT_FLASK_CONTROLLER
+    component "Project Service" as COMP_PROJECT_SERVICE
+    component "Project Utilities" as COMP_PROJECT_UTILITIES
+
+    INTERFACE_SCRATCH_PROJECT_LINK -(0- COMP_PROJECT_FLASK_RESOURCE
+    COMP_PROJECT_FLASK_RESOURCE -(0- COMP_PROJECT_FLASK_CONTROLLER
+    COMP_PROJECT_FLASK_CONTROLLER -up(0- COMP_PROJECT_SERVICE
+    
+    COMP_PROJECT_SERVICE -up(0- COMP_DATABASE_DRIVER
+    COMP_PROJECT_SERVICE -left(0- COMP_PROJECT_UTILITIES
+    COMP_PROJECT_SERVICE -(0 COMP_SCRATCH_SERVER
+  }
+
+}
+
+note top of INTERFACE_SCRATCH_PROJECT_LINK
   Esse é o momento onde o usuário 
-  faz a requisição para o serviço 
-  do Google afim de realizar sua 
-  autenticação no aplicativo.
+  faz a requisição para o SPWS e
+  fornece a URL do projeto Scratch
+  para obter as informações de
+  análise do pseudocódigo do projeto.
 end note
 
 @enduml
