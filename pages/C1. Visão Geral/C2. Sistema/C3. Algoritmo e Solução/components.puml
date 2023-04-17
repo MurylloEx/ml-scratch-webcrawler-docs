@@ -50,8 +50,8 @@ Container_Boundary(SystemApi, "API REST") {
 
   Rel(ProjectService, Database, "Uses")
   Rel(StudioService, Database, "Uses")
-  Rel(ProjectUtility, SystemScratchApi, "Makes API calls to", "JSON/HTTP")
-  Rel(StudioUtility, SystemScratchApi, "Makes API calls to", "JSON/HTTP")
+  Rel(ProjectUtility, SystemScratchApi, "Realiza chamadas para consultar projetos do scratch.", "HTTP over TCP/IP")
+  Rel(StudioUtility, SystemScratchApi, "Realiza chamadas para consultar studios do scratch.", "HTTP over TCP/IP")
 
 }
 

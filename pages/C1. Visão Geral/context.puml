@@ -15,8 +15,8 @@ System(SystemSpws, "Sistema SPWS", "O sistema SPWS (Scratch Projects Web Scraper
 System_Ext(SystemSupabase, "Supabase Postgres", "É responsável por persistir os dados extraídos da Scratch API e processados pelo back-end do sistema SPWS.")
 System_Ext(SystemScratchApi, "Scratch API", "É responsável por consultar informações internas do Scratch como, por exemplo, o pseudocódigo dos projetos em formato JSON e seus metadados.")
 
-Rel(ActorUser, SystemSpws, "Visualiza e interage com as funcionalidades do Scratch Analyzer", "Web/HTML")
-Rel(SystemSpws, SystemSupabase, "Realiza consultas e execução de comandos no banco de dados Postgres", "PL/SQL over TCP/IP")
-Rel(SystemSpws, SystemScratchApi, "Realiza chamadas para consultar projetos, studios do scratch", "HTTP and TCP/IP")
+Rel(ActorUser, SystemSpws, "Visualiza e interage com as funcionalidades do Scratch Analyzer.", "Web/HTML")
+Rel(SystemSpws, SystemSupabase, "Realiza consultas e execução de comandos no banco de dados Postgres.", "PL/SQL over TCP/IP")
+Rel(SystemSpws, SystemScratchApi, "Realiza chamadas para consultar projetos, studios do scratch.", "HTTP over TCP/IP")
 
 @enduml
