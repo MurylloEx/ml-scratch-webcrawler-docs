@@ -1,34 +1,28 @@
 @startuml "Container Diagram"
 
-title "XXXXX - Diagrama de container do sistema"
+title "SPWS - Diagrama de container do sistema"
 
-!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Component.puml
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Container.puml
 
 LAYOUT_WITH_LEGEND()
+LAYOUT_LEFT_RIGHT()
 
 skinparam backgroundcolor transparent
 
-Person(ActorUser, "Usuário", "É o ator responsável por realizar a interação com o sistema e obter as informações referentes à universidade. Este ator requer autenticação utilizando uma conta Google para acessar as funcionalidades do aplicativo.")
+Person(ActorUser, "Usuário", "É o ator responsável por realizar as interações com o SPWS. Esse ator pode ser do meio acadêmico, um aluno de programação, um usuário do Scratch ou qualquer interessado em obter informações técnicas referentes aos seus projetos Scratch.")
 
-Container_Boundary(SystemSejaUPE, "Sistema XXXXX") {
-  Container(ContainerMobileApp, "Aplicativo Móvel", "Container: React Native", "Provê aos usuários acesso as funcionalidades a partir do cliente.")
+Container_Boundary(SystemSejaUPE, "Sistema SPWS") {
+  Container(ContainerWebApp, "Aplicação Web", "Container: React/JavaScript", "Provê aos usuários acesso as funcionalidades a partir do cliente.")
   Container(ContainerServerApi, "API REST", "Container: NestJS/Node", "Provê as funcionalidades do XXXXX via API JSON/HTTPS.")
-  Container(ContainerDatabase, "Banco de Dados", "Container: RDBMS/SQLite", "Armazena dados dos campi da UPE (Universidade de Pernambuco).")
   
-  Rel(ContainerServerApi, ContainerDatabase, "Realiza leitura e armazena dados", "TypeORM")
-  Rel(ContainerMobileApp, ContainerServerApi, "Faz uma chamada para API", "JSON/HTTPS")
+  Rel(ContainerWebApp, ContainerServerApi, "Faz uma chamada para API", "JSON/HTTPS")
 }
 
-System(SystemWebsocket, "WebSocket", "É responsável por manter o envio e recebimento de mensagens dentro do chat.")
-System_Ext(SystemSmtp, "Sistema de E-mail", "É responsável por enviar os e-mails de boas-vindas ao usuário através do SMTP2GO.")
-System_Ext(SystemNotification, "Sistema de Notificações", "É responsável por emitir as notificações no smartphone através do Expo Notifications para lembrar o usuário de interação com o aplicativo.")
-System_Ext(SystemOAuth2, "Sistema de SSO", "É responsável por possibilitar ao usuário realizar login utilizando sua conta Google.")
+System_Ext(SystemSupabase, "Supabase Postgres", "É responsável por persistir os dados extraídos da Scratch API e processados pelo back-end do sistema SPWS.")
+System_Ext(SystemScratchApi, "Scratch API", "É responsável por consultar informações internas do Scratch como, por exemplo, o pseudocódigo dos projetos em formato JSON e seus metadados.")
 
-Rel(ActorUser, ContainerMobileApp, "Visualiza e interage com as funcionalidades do sistema")
-Rel(ContainerMobileApp, SystemNotification, "Aplicativo agenda as notificações para aproximadamente 3 horas depois", "Expo Notification")
-Rel(ContainerMobileApp, SystemWebsocket, "Envia e recebe mensagens", "React Native useWebSocket")
-Rel(ContainerServerApi, SystemWebsocket, "Difunde as mensagens em modo Broadcast", "NestJS Websocket Gateway")
-Rel(ContainerServerApi, SystemOAuth2, "Autentica o usuário", "OAuth2")
-Rel(ContainerServerApi, SystemSmtp, "Envia e-mail utilizando", "SMTP2GO")
+Rel(ActorUser, ContainerWebApp, "Visualiza e interage com as funcionalidades do Scratch Analyzer", "Web/HTML")
+Rel(ContainerServerApi, SystemSupabase, "Realiza consultas e execução de comandos no banco de dados Postgres", "PL/SQL over TCP/IP")
+Rel(ContainerServerApi, SystemScratchApi, "Realiza chamadas para consultar projetos, studios do scratch", "HTTP and TCP/IP")
 
 @enduml

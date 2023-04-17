@@ -1,6 +1,6 @@
 @startuml "Context Diagram"
 
-title "XXXXX - Diagrama de contexto do sistema"
+title "SPWS - Diagrama de contexto do sistema"
 
 !include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
 
@@ -9,19 +9,14 @@ LAYOUT_LEFT_RIGHT()
 
 skinparam backgroundcolor transparent
 
-Person(ActorUser, "Usuário", "É o ator responsável por realizar a interação com o sistema e obter as informações referentes à universidade. Este ator requer autenticação utilizando uma conta Google para acessar as funcionalidades do aplicativo.")
+Person(ActorUser, "Usuário", "É o ator responsável por realizar as interações com o SPWS. Esse ator pode ser do meio acadêmico, um aluno de programação, um usuário do Scratch ou qualquer interessado em obter informações técnicas referentes aos seus projetos Scratch.")
 
-System(SystemSejaUPE, "Sistema XXXXX", "O aplicativo XXXXX, de propósito educativo, informativo e descritivo com forte foco em tornar a Universidade de Pernambuco mais próxima da sociedade, mostrar seus cursos e seu corpo docente de forma mais efetiva para aqueles vestibulandos que necessitem conhecer melhor a universidade.")
-System(SystemWebsocket, "WebSocket", "É responsável por manter a o envio e recebimento de mensagens dentro do chat.")
-System_Ext(SystemSmtp, "Sistema de E-mail", "É responsável por enviar os e-mails de boas-vindas ao usuário através do SMTP2GO.")
-System_Ext(SystemNotification, "Sistema de Notificações", "É responsável por emitir as notificações no smartphone através do Expo Notifications para lembrete de interação com o aplicativo.")
-System_Ext(SystemOAuth2, "Sistema de SSO", "É responsável por possibilitar o usuário realizar login utilizando sua conta Google.")
+System(SystemSpws, "Sistema SPWS", "O sistema SPWS (Scratch Projects Web Scraper), constituído de um back-end desenvolvido em Flask/Python e um front-end em React/Javascript. Seu principal papel é prover ao usuário a capacidade de visualizar projetos Scratch de forma mais alto nível no que diz respeito ao seu código-fonte. O sistema utiliza um miniparser feito em Python para esse propósito.")
+System_Ext(SystemSupabase, "Supabase Postgres", "É responsável por persistir os dados extraídos da Scratch API e processados pelo back-end do sistema SPWS.")
+System_Ext(SystemScratchApi, "Scratch API", "É responsável por consultar informações internas do Scratch como, por exemplo, o pseudocódigo dos projetos em formato JSON e seus metadados.")
 
-Rel(ActorUser, SystemSejaUPE, "Visualiza e interage com as funcionalidades do sistema")
-Rel(SystemSmtp, ActorUser, "Manda e-mail para", "SMTP2GO")
-Rel(SystemSejaUPE, SystemSmtp, "Manda e-mail utilizando", "SMTP2GO")
-Rel(SystemSejaUPE, SystemNotification, "Aplicativo agenda as notificações para aproximadamente 3 horas depois", "Expo Notification")
-Rel(SystemSejaUPE, SystemWebsocket, "Envie e recebe mensagens", "React Native useWebSocket")
-Rel(SystemSejaUPE, SystemOAuth2, "Autentica o usuário", "OAuth2")
+Rel(ActorUser, SystemSpws, "Visualiza e interage com as funcionalidades do Scratch Analyzer", "Web/HTML")
+Rel(SystemSpws, SystemSupabase, "Realiza consultas e execução de comandos no banco de dados Postgres", "PL/SQL over TCP/IP")
+Rel(SystemSpws, SystemScratchApi, "Realiza chamadas para consultar projetos, studios do scratch", "HTTP and TCP/IP")
 
 @enduml
