@@ -1,0 +1,46 @@
+@startuml "Class Diagram"
+
+title "Diagrama de Classes da API REST em Flask"
+
+class Resource {
+  +dispatch_request(*args, **kwargs)
+}
+
+class ProjectResource {
+  +get(id: int)
+  +post()
+}
+
+class StudioResource {
+  +get(id: int)
+}
+
+class ProjectController {
+  +get_projects_csv(supabase: Client)
+  +fetch(id: int, supabase: Client)
+  +create(id: int, supabase: Client)
+}
+
+class StudioController {
+  +use(StudioService)
+}
+
+class ProjectService {
+  +get_projects_csv(supabase: Client)
+  +fetch(id: int, supabase: Client)
+  +create(id: int, supabase: Client)
+}
+
+class StudioService {
+  +get_studio_info(studio_id: int)
+  +get_studio_projects(supabase: Client, studio_id: int, offset: int)
+}
+
+StudioResource --|> Resource
+ProjectResource --|> Resource
+StudioResource ..> StudioController
+ProjectResource ..> ProjectController
+StudioController ..> StudioService
+ProjectController ..> ProjectService
+
+@enduml

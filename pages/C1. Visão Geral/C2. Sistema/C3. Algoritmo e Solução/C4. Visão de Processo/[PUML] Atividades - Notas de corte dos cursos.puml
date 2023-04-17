@@ -1,25 +1,44 @@
 @startuml "Activity Diagram"
 
-partition "Visualizar notas de corte de um curso" {
+title "Diagrama de Atividade da pesquisa de projeto no Scratch Analyzer"
+
+partition "Visualizar estatísticas de análise léxica do pseudocódigo do projeto" {
   start
-  if (Possui conectividade?) then (Possui conexão Wi-Fi)
-    :Entrar usando o Gmail;
-    :Responder questionário;
+  note right
+    Usuário cola a URL do projeto ou estúdio Scratch no Scratch Analyzer
+  end note
+  :1. Pega o ID do projeto;
+
+  if (2. Verifica se o projeto já existe ou não na base do Supabase) then (Se o projeto já existir)
+    :2. Pega o que há no SupaBase e retorna informações do projeto já existentes;
+    :3. Carrega o JSON para a memória;
+    :4. Itera sobre os blocos da linguagem;
     fork
-    :Visualizar cursos horizontalmente;
+      :5. Contabiliza o os tipos de blocos;
     fork again
-    :Visualizar cursos verticalmente;
+      :5. Contabiliza quantos blocos no total;
     end fork
-    :Exibir cursos mais compatíveis com as escolhas;
-    note right
-      Usuário deverá selecionar curso que mais interessou
-    end note
-    :Selecionar curso;
-    :Carregar detalhes do curso;
-    :Exibir notas de corte;
+    :6. Retorna as informações para o usuário;
     stop
-  else (Sem acesso ao Wi-Fi)
-    end
+    note left
+      Momento em que o usuário visualiza as informações retornadas pelo Scratch Analyzer
+    end note
+  else (Se o projeto não existir)
+    :2. Chama a API para pegar os metadados do projeto e obtém um token temporário do projeto;
+    :3. A partir desse token temporário realiza uma requisição e acessa o JSON que tem o código-fonte;
+    :4. Salva o resultado da consulta feita ao Scratch no Supabase;
+    :5. Carrega o JSON para a memória;
+    :6. Itera sobre os blocos da linguagem;
+    fork
+      :7. Contabiliza o os tipos de blocos;
+    fork again
+      :7. Contabiliza quantos blocos no total;
+    end fork
+    :8. Retorna as informações para o usuário;
+    stop
+    note right
+      Momento em que o usuário visualiza as informações retornadas pelo Scratch Analyzer
+    end note
   endif
 }
 
