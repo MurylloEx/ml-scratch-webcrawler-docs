@@ -7,14 +7,14 @@ partition "Visualizar estatísticas de análise léxica do pseudocódigo do proj
   note right
     Usuário cola a URL do projeto ou estúdio Scratch no Scratch Analyzer
   end note
-  :1. Pega o ID do projeto;
+  :1. Extrai o ID do projeto a partir da URL fornecida;
 
   if (2. Verifica se o projeto já existe ou não na base do Supabase) then (Se o projeto já existir)
-    :2. Pega o que há no SupaBase e retorna informações do projeto já existentes;
+    :2. Consulta o que há no Supabase e retorna informações do projeto já existentes;
     :3. Carrega o JSON para a memória;
     :4. Itera sobre os blocos da linguagem;
     fork
-      :5. Contabiliza o os tipos de blocos;
+      :5. Contabiliza os tipos de blocos;
     fork again
       :5. Contabiliza quantos blocos no total;
     end fork
@@ -24,7 +24,7 @@ partition "Visualizar estatísticas de análise léxica do pseudocódigo do proj
       Momento em que o usuário visualiza as informações retornadas pelo Scratch Analyzer
     end note
   else (Se o projeto não existir)
-    :2. Chama a API para pegar os metadados do projeto e obtém um token temporário do projeto;
+    :2. Chama a API para consultar os metadados do projeto e obtém um token temporário do projeto;
     :3. A partir desse token temporário realiza uma requisição e acessa o JSON que tem o código-fonte;
     :4. Salva o resultado da consulta feita ao Scratch no Supabase;
     :5. Carrega o JSON para a memória;
