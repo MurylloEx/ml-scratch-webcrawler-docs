@@ -1,31 +1,59 @@
 @startuml "Sequence Diagram"
 
-title "Diagrama de Sequência - Obter Cursos do Campus"
+title "Diagrama de Sequência - Analisar pseudocódigo de projeto"
 
 actor "Usuário"                   as USER
-control "CampusController"        as CAMPUS_CONTROLLER
-participant "CourseService"       as COURSE_SERVICE
-entity "Repository<CampusModel>"  as CAMPUS_REPOSITORY
-entity "Repository<CourseModel>"  as COURSE_REPOSITORY
+boundary "ProjectResource"        as PROJECT_RESOURCE
+control "ProjectController"       as PROJECT_CONTROLLER
+control "ProjectService"          as PROJECT_SERVICE
+control "ProjectUtilities"        as PROJECT_UTILITIES
 
-USER -> CAMPUS_CONTROLLER : 1. Solicita os cursos de um Campus : onCampusCoursesRequested
-CAMPUS_CONTROLLER -> COURSE_SERVICE : 1.1. Consulta os cursos de um Campus : fetchCampusCourses
-COURSE_SERVICE -> CAMPUS_REPOSITORY : 1.1.1. Consulta o Campus pelo identificador especificado : findOne
-CAMPUS_REPOSITORY -->> COURSE_SERVICE : Retorna o Campus desejado : Promise<CampusModel | null>
-alt "findOne() === null" : "Caso o Campus especificado pelo identificador não exista"
-  COURSE_SERVICE -> COURSE_SERVICE : 1.1.2. throw new CampusNotFoundException
+alt "id != None" : "Caso o [id] seja fornecido na solicitação"
+  USER -> PROJECT_RESOURCE : 1. Solicita a análise do pseudocódigo do projeto : GET /projects/{id} | get
+  PROJECT_RESOURCE -> PROJECT_CONTROLLER : 1.1. Solicita a análise do pseudocódigo do projeto : fetch()
+  PROJECT_CONTROLLER -> PROJECT_SERVICE : 1.1.1. Solicita ao serviço que busque a análise do pseudocódigo do projeto pelo seu id : fetch()
+
+  PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.1. Especifica quais colunas selecionar : select
+  PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.2. Especifica a condição para filtrar pelo id fornecido na requisição : eq()
+  PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.3. Executa a consulta e armazena o resultado numa variável chamada "response" : execute()
+
+  alt "response.data && len(response.data) > 0" : "Caso hajam dados retornados pelo Supabase"
+    PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.4. Compila uma expressão regular, um padrão para extração de valores textuais : compile()
+    PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.5. Realiza a busca da descrição : findall()
+    PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.6. Realiza a busca das instruções : findall()
+  end
+
+  alt "!response.data || len(response.data) == 0" : "Caso não hajam dados retornados pelo Supabase"
+    PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.4. Solicita que seja criado no banco de dados uma nova entrada com as análises do pseudocódigo do projeto : create()
+
+    PROJECT_SERVICE -> PROJECT_UTILITIES : 1.1.1.5. Obtém as informações do projeto : get_project_info()
+    PROJECT_UTILITIES -->> PROJECT_SERVICE : Retorna as informações do projeto
+
+    PROJECT_SERVICE -> PROJECT_UTILITIES : 1.1.1.6. Solicita o JSON que representa o pseudocódigo : get_project_json()
+    PROJECT_UTILITIES -->> PROJECT_SERVICE : Retorna o JSON que representa o pseudocódigo do projeto no Scratch
+
+    PROJECT_SERVICE -> PROJECT_UTILITIES : 1.1.1.7. Realiza o parsing dos blocos do pseudocódigo : get_blocks_analysis()
+    PROJECT_UTILITIES -->> PROJECT_SERVICE : Retorna as informações da análise dos blocos do pseudocódigo do projeto
+
+    PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.8. Insere as informações do projeto e da análise dos blocos do pseudocódigo no banco de dados : insert()
+    PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.9. Executa a instrução no banco de dados : execute()
+  end
+
+  PROJECT_SERVICE -->> PROJECT_CONTROLLER : Retorna as informações da análise dos blocos do pseudocódigo do projeto
+  PROJECT_CONTROLLER -->> PROJECT_RESOURCE : Retorna as informações da análise dos blocos do pseudocódigo do projeto
+  PROJECT_RESOURCE -->> USER : Retorna as informações da análise dos blocos do pseudocódigo do projeto
 end
-COURSE_SERVICE -> COURSE_REPOSITORY : 1.1.3. Consulta os cursos do Campus especificado : find
-COURSE_REPOSITORY -->> COURSE_SERVICE : Retorna uma lista de contatos referentes ao Campus : Promise<CourseModel[]>
-COURSE_SERVICE -->> CAMPUS_CONTROLLER : Retorna uma lista de cursos referentes ao Campus : CourseModel[]
-CAMPUS_CONTROLLER -->> USER : Retorna uma lista de cursos referentes ao Campus : CourseModel[]
-note left
-  O Framework NestJS abstrai as promises 
-  e transforma a resposta em um objeto 
-  JSON trafegável pelo Socket. 
 
-  Nesse caso, onCampusCoursesRequested é 
-  uma Action do Controller.
-end note
+alt "id == None" : "Caso o [id] não seja fornecido na solicitação"
+  USER -> PROJECT_RESOURCE : 1. Solicita as informações da análise dos blocos do pseudocódigo de todos os projetos : GET /projects | get
+  PROJECT_RESOURCE -> PROJECT_CONTROLLER : 1.1. Solicita as informações da análise dos blocos do pseudocódigo de todos os projetos : fetch_all()
+  PROJECT_CONTROLLER -> PROJECT_SERVICE : 1.1.1. Solicita as informações da análise dos blocos do pseudocódigo de todos os projetos : get_projects_csv()
+  PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.1. Especifica quais colunas selecionar  : select()
+  PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.2. Executa a consulta e armazena o resultado numa variável chamada "response" : execute()
+  PROJECT_SERVICE -> PROJECT_SERVICE : 1.1.1.3. Converte o objeto de projetos em formato CSV : to_csv()
+  PROJECT_SERVICE -->> PROJECT_CONTROLLER : Retorna as informações da análise dos blocos do pseudocódigo de todos os projetos
+  PROJECT_CONTROLLER -->> PROJECT_RESOURCE : Retorna as informações da análise dos blocos do pseudocódigo de todos os projetos
+  PROJECT_RESOURCE -->> USER : Retorna as informações da análise dos blocos do pseudocódigo de todos os projetos
+end
 
 @enduml
