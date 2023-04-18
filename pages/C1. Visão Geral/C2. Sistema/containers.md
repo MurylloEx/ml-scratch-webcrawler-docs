@@ -7,7 +7,7 @@ As principais tecnologias utilizadas para a construção do projeto foram [Pytho
 
 ### C2.2 Quais são os frameworks utilizados dentro do sistema?
 
-Dentro do projeto em questão, foram utilizados alguns frameworks para facilitar o desenvolvimento e organização do código, sendo os principais o: [Flask](http://localhost/#/HOME:~:text=necessidades%20de%20design.-,Flask,-O%20Flask%20%C3%A9) e [React](https://react.dev/)
+Dentro do projeto em questão, foram utilizados alguns frameworks para facilitar o desenvolvimento e organização do código, sendo os principais o: [Flask](https://flask.palletsprojects.com/) e [React](https://react.dev/)
 
 - Flask é um framework web em Python utilizado para construir aplicações web de forma rápida e eficiente, proporcionando uma estrutura sólida e modular para o desenvolvimento.
 - Já o React é uma biblioteca JavaScript utilizada para criar interfaces de usuário dinâmicas e responsivas, sendo bastante útil para a construção de aplicações web modernas e interativas.
@@ -26,12 +26,9 @@ O sistema **Scratch Projects Web Scraper (SPWS)** é dividido em duas camadas pr
 
 ### C2.5 Como cada container se comunica dentro do projeto?
 
-- **Resource**:
-  - Para que cada container se comunique dentro do projeto, o fluxo de comunicação ocorre da seguinte forma: o container do frontend faz requisições HTTP para o container da camada Resource, especificando a rota e o método HTTP. Em seguida, a camada Resource direciona essa requisição para o Controller correspondente, que irá validar e processar a requisição. Se necessário, o Controller faz chamadas para os Services para realizar a lógica de negócio. Finalmente, o Controller retorna uma resposta para a camada Resource, que envia a resposta para o frontend. Dessa forma, a comunicação é feita de maneira organizada e estruturada entre as camadas do projeto.
-- **Controller**:
-  - Em seguida, a camada Resource direciona essa requisição para o Controller correspondente, que irá validar e processar a requisição.
-- **Service**:
-  - A camada Service é responsável por implementar a lógica de negócio da aplicação.
+- **Resource**: Para que cada container se comunique dentro do projeto, o fluxo de comunicação ocorre da seguinte forma: o container do frontend faz requisições HTTP para o container da camada Resource, especificando a rota e o método HTTP. Em seguida, a camada Resource direciona essa requisição para o Controller correspondente, que irá validar e processar a requisição. Se necessário, o Controller faz chamadas para os Services para realizar a lógica de negócio. Finalmente, o Controller retorna uma resposta para a camada Resource, que envia a resposta para o frontend. Dessa forma, a comunicação é feita de maneira organizada e estruturada entre as camadas do projeto.
+- **Controller**: Em seguida, a camada Resource direciona essa requisição para o Controller correspondente, que irá validar e processar a requisição.
+- **Service**: A camada Service é responsável por implementar a lógica de negócio da aplicação.
 
 ### C2.6 Quais são as convenções utilizadas no projeto?
 
@@ -50,3 +47,31 @@ Em todo o sistema (back e front) foram utilizadas as seguintes convenções:
 Uma das restrições e limitações do projeto é o limite de requisições na API do Scratch. Para evitar suspeitas de violação dos termos de serviço do Scratch, foi definido um limite de 1 requisição a cada 10 segundos no máximo. Caso esse limite seja excedido, a API do Scratch pode bloquear o acesso ao sistema, impedindo a coleta de dados. Além disso, outra restrição importante é a disponibilidade e qualidade dos dados fornecidos pela API do Scratch. Como o sistema depende desses dados para gerar seus resultados, é importante que a API esteja disponível e que os dados sejam confiáveis e atualizados. Caso contrário, o sistema pode apresentar falhas e inconsistências em seus resultados. Outras possíveis restrições e limitações podem surgir durante o desenvolvimento do sistema e devem ser avaliadas e tratadas pela equipe de desenvolvimento.
 
 Uma solução para lidar com a restrição de não encontrar um projeto na base seria implementar a funcionalidade de adicionar automaticamente o projeto pesquisado pelo usuário na base de dados do sistema. Isso permitiria que o projeto seja encontrado na próxima vez que for pesquisado, evitando a necessidade de fazer uma nova requisição à API do Scratch. Além disso, seria possível definir um limite para o número de projetos adicionados automaticamente em um determinado período de tempo, para evitar sobrecarregar o sistema ou a API do Scratch com uma grande quantidade de requisições.
+
+### C2.8 Como as responsabilidades são separadas entre os containers?
+
+#### C2.8.1 Subsistemas
+
+O **Scratch Projects Web Scraper (SPWS)** interage com subsistemas desvinculados da aplicação principal. Isso ocorre pois nem todos os serviços necessários e recursos do sistema podem ser criados do zero, então, são utilizados sistemas prontos que possuem integrações disponíveis. Dessa forma, o sistema é composto por pequenos subsistemas como:
+
+- **Expo Notifications**;
+- **Google Single Sign-On**;
+- **SMTP2GO (Sistema de E-mail)**;
+- **WebSocket Gateway**;
+
+#### C2.8.2 Containers e suas responsabilidades
+
+- **Aplicativo Móvel:**
+  - Provê aos usuários acesso as funcionalidades a partir do aplicativo (cliente móvel);
+- **API REST:**
+  - Provê as funcionalidades do Scratch Projects Web Scraper (SPWS) via API REST JSON/HTTPS;
+- **Banco de Dados:**
+  - Armazena dados dos campi da UPE (Universidade de Pernambuco) e de todo o sistema;
+- **WebSocket:**
+  - É responsável por manter o envio e recebimento de mensagens dentro do chat do aplicativo;
+- **Sistema de E-mail:**
+  - É responsável por enviar os e-mails de boas-vindas ao usuário através do SMTP2GO;
+- **Sistema de Notificações:**
+  - É responsável por emitir as notificações no smartphone através do Expo Notifications para lembrar o usuário de interação com o aplicativo;
+- **Sistema de SSO:**
+  - É responsável por possibilitar ao usuário realizar login utilizando sua conta Google;
