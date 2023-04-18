@@ -2,7 +2,7 @@
 
 As principais tecnologias utilizadas para a construção do projeto foram [Python](https://www.python.org/) e a utilização de banco de dados relacional [Supabase](https://supabase.com/).
 
-- Python é uma linguagem de programação de alto nível, interpretada e orientada a objetos. A linguagem é de código aberto e tem uma grande comunidade de desenvolvedores ativos, o que garante seu contínuo desenvolvimento e atualização.
+- Python é uma linguagem de programação de alto nível, interpretada e orientada a objetos. A linguagem é de código aberto e tem uma grande comunidade de desenvolvedores ativos, o que garante seu contínuo dsenvolvimento e atualização.
 - Já o Supabase é uma plataforma de banco de dados e desenvolvimento de aplicativos que fornece uma API pronta para uso e uma interface do usuário amigável para gerenciar seus bancos de dados e recursos de backend. Ele é construído sobre o Postgres e inclui recursos como autenticação, armazenamento em nuvem, WebSockets em tempo real, entre outros. A Supabase é uma alternativa de código aberto e escalável para o Firebase do Google, permitindo que os desenvolvedores criem rapidamente aplicativos e serviços de backend robustos e seguros.
 
 ### C2.2 Quais são os frameworks utilizados dentro do sistema?
@@ -10,7 +10,7 @@ As principais tecnologias utilizadas para a construção do projeto foram [Pytho
 Dentro do projeto em questão, foram utilizados alguns frameworks para facilitar o desenvolvimento e organização do código, sendo os principais o: [Flask](http://localhost/#/HOME:~:text=necessidades%20de%20design.-,Flask,-O%20Flask%20%C3%A9) e [React](https://react.dev/)
 
 - Flask é um framework web em Python utilizado para construir aplicações web de forma rápida e eficiente, proporcionando uma estrutura sólida e modular para o desenvolvimento.
-- Já o React é uma biblioteca JavaScript utilizada para criar interfaces de usuário dinâmicas e responsivas, sendo muito útil para a construção de aplicações web modernas e interativas.
+- Já o React é uma biblioteca JavaScript utilizada para criar interfaces de usuário dinâmicas e responsivas, sendo bastante útil para a construção de aplicações web modernas e interativas.
 - Ambos os frameworks têm sido amplamente utilizados na construção de sistemas web, contribuindo para uma melhor organização do código e um desenvolvimento mais rápido e eficiente.
 
 ### C2.3 Quais são as linguagens de programação utilizadas dentro do projeto?
