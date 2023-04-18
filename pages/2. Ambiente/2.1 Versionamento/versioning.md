@@ -30,7 +30,14 @@ O próprio git facilita a utilização do GitFlow pois seu utilitário de linha 
 
 ### 2.1.1 Clonando o repositório
 
-Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Para clonar o repositório, execute o seguinte comando na sua raiz de projetos e workspaces:
+
+```
+git clone https://github.com/Wolf-gangSE/scratch-data.git
+```
+
+>[!TIP]
+>Você pode acessar o repositório do projeto em [Scratch Data](https://github.com/Wolf-gangSE/scratch-data).
 
 ### 2.1.2 Contribuindo com o projeto
 
