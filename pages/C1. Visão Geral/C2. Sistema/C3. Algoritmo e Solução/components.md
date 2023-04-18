@@ -11,11 +11,8 @@ O **Flask** é altamente escalável, ele é capaz de lidar com grandes volumes d
 Algumas das principais razões pelas quais o Flask é uma escolha popular para construir APIs em Python incluem:
 
 - **Simplicidade:** o Flask é um framework web minimalista que é fácil de aprender e usar. Ele oferece uma abordagem simples e direta para a criação de APIs, sem a necessidade de lidar com um framework complexo e extenso.
-
 - **Flexibilidade:** o Flask é altamente configurável e permite que os desenvolvedores escolham as bibliotecas e ferramentas que desejam usar em seus projetos. Ele é projetado para ser usado em conjunto com outras bibliotecas Python e é altamente extensível.
-
 - **Modularidade:** o Flask é altamente modular e permite que os desenvolvedores adicionem facilmente funcionalidades extras, como autenticação de usuários, armazenamento em cache e suporte a banco de dados. Isso significa que os desenvolvedores podem facilmente adicionar recursos adicionais à sua API sem ter que reescrever todo o código.
-
 - **Escalabilidade:** o Flask é altamente escalável e pode lidar com grandes volumes de tráfego. Ele é capaz de lidar com APIs complexas e em grande escala e pode ser implantado facilmente em diferentes ambientes, incluindo servidores web e plataformas em nuvem.
 
 > [!WARNING]
@@ -76,16 +73,13 @@ Para se implementar uma nova funcionalidade você deverá seguir o fluxo de impl
 
 As camadas que devem ser implementadas para se criar um novo endpoint e, consequentemente, um caso de uso no lado do back-end são as seguintes, em ordem de prioridade:
 
-1. **Resources:**<b>
+1. **Resources:**<br>
 São as classes responsáveis por lidar com as solicitações HTTP que chegam ao servidor Flask. Em geral, cada recurso representa um endpoint da API e define as operações que podem ser executadas nesse endpoint. Para criar um novo recurso, é necessário criar uma nova classe que herda da classe Flask's Resource e implementar os métodos HTTP necessários, como GET, POST, PUT ou DELETE. Por exemplo, se você quiser criar um novo endpoint para listar usuários, poderia criar um novo recurso chamado UserListResource que implementa o método GET.
-
-2. **Controllers:**<b>
+2. **Controllers:**<br>
 São as classes responsáveis por orquestrar a lógica de negócios da aplicação, como validação de entrada, manipulação de dados e interação com o banco de dados. Em geral, cada recurso da API tem um controlador correspondente que lida com a lógica de negócios relacionada a esse endpoint. Para criar um novo controlador, é necessário criar uma nova classe que encapsule a lógica de negócios do recurso e chamar os métodos correspondentes do serviço.
-
-3. **Services:**<b>
+3. **Services:**<br>
 São as classes responsáveis por encapsular a lógica de negócios da aplicação. Eles fornecem uma camada de abstração entre o controlador e o banco de dados, por exemplo. Para criar um novo serviço, é necessário criar uma nova classe que encapsule a lógica de negócios da aplicação e fornecer métodos para interagir com o banco de dados, como inserir, atualizar ou excluir registros.
-
-4. **Utilities:**<b>
+4. **Utilities:**<br>
 São funções ou classes utilitárias que podem ser usadas em toda a aplicação para tarefas comuns, como manipulação de data/hora ou formatação de strings. Para criar um novo utilitário, é necessário criar uma nova função ou classe que encapsule a lógica de negócios do utilitário e que possa ser facilmente reutilizada em toda a aplicação.
 
 #### C3.4.2 Padrões e convenções de nomenclatura
