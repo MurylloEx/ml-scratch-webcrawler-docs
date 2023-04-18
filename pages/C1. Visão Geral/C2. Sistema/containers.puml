@@ -13,7 +13,7 @@ Person(ActorUser, "Usuário", "É o ator responsável por realizar as interaçõ
 
 Container_Boundary(SystemSejaUPE, "Sistema SPWS") {
   Container(ContainerWebApp, "Aplicação Web", "Container: React/JavaScript", "Provê aos usuários acesso as funcionalidades a partir do cliente.")
-  Container(ContainerServerApi, "API REST", "Container: NestJS/Node", "Provê as funcionalidades do SPWS via API JSON/HTTPS.")
+  Container(ContainerServerApi, "API REST", "Container: Flask/Python", "Provê as funcionalidades do SPWS via API JSON/HTTPS.")
   
   Rel(ContainerWebApp, ContainerServerApi, "Faz uma chamada para API", "JSON/HTTPS")
 }
