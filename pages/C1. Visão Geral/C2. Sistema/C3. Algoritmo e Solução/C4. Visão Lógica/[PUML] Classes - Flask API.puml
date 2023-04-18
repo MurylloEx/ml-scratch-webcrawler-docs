@@ -22,7 +22,7 @@ class ProjectController {
 }
 
 class StudioController {
-  +use(StudioService)
+  +fetch(supabase: Client, studio_id: int, offset: int)
 }
 
 class ProjectService {

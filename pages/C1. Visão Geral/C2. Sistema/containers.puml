@@ -11,7 +11,7 @@ skinparam backgroundcolor transparent
 
 Person(ActorUser, "Usuário", "É o ator responsável por realizar as interações com o SPWS. Esse ator pode ser do meio acadêmico, um aluno de programação, um usuário do Scratch ou qualquer interessado em obter informações técnicas referentes aos seus projetos Scratch.")
 
-Container_Boundary(SystemSejaUPE, "Sistema SPWS") {
+Container_Boundary(SystemSpws, "Sistema SPWS") {
   Container(ContainerWebApp, "Aplicação Web", "Container: React/JavaScript", "Provê aos usuários acesso as funcionalidades a partir do cliente.")
   Container(ContainerServerApi, "API REST", "Container: Flask/Python", "Provê as funcionalidades do SPWS via API JSON/HTTPS.")
   
